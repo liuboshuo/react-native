@@ -20,6 +20,5 @@ iOSReactNative/node_modules/
 
 #pod 
 iOSReactNative/iOS/pods
-*.lock
 
 
