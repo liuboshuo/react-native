@@ -1,0 +1,12 @@
+platform :ios, ‘8.0’
+target ‘iOSReactNative’ do
+
+pod ‘React’, :path => ‘../node_modules/react-native', :subspecs => [  
+  'Core',
+  'RCTNetwork',
+  'RCTText',
+  'RCTWebSocket’,
+  ‘RCTAnimation’,
+  ‘RCTImage’
+]
+end

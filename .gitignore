@@ -1,0 +1,25 @@
+# OSX
+#
+.DS_Store
+local.properties
+*.iml
+
+# Android/IntelliJ
+RNDemo/build/
+RNDemo/.idea/
+RNDemo/android/.gradle
+RNDemo/android/build
+RNDemo/android/app/build
+
+
+# node.js
+#
+RNDemo/node_modules/
+iOSReactNative/node_modules/
+
+
+#pod 
+iOSReactNative/iOS/pods
+*.lock
+
+

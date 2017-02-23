@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		88004AB11E5D2C63005AB638 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88004AB01E5D2C63005AB638 /* main.m */; };
+		88004AB41E5D2C63005AB638 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88004AB31E5D2C63005AB638 /* AppDelegate.m */; };
+		88004AB71E5D2C63005AB638 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88004AB61E5D2C63005AB638 /* ViewController.m */; };
+		88004ABA1E5D2C63005AB638 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88004AB81E5D2C63005AB638 /* Main.storyboard */; };
+		88004ABC1E5D2C63005AB638 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88004ABB1E5D2C63005AB638 /* images.xcassets */; };
+		88004ABF1E5D2C63005AB638 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88004ABD1E5D2C63005AB638 /* LaunchScreen.storyboard */; };
+		BFE44A368F8D3A74C0ABC8E8 /* libPods-iOSReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 689A3B325292552D1A97E35A /* libPods-iOSReactNative.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		689A3B325292552D1A97E35A /* libPods-iOSReactNative.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSReactNative.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88004AAC1E5D2C63005AB638 /* iOSReactNative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSReactNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88004AB01E5D2C63005AB638 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		88004AB21E5D2C63005AB638 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		88004AB31E5D2C63005AB638 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		88004AB51E5D2C63005AB638 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		88004AB61E5D2C63005AB638 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		88004AB91E5D2C63005AB638 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		88004ABB1E5D2C63005AB638 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
+		88004ABE1E5D2C63005AB638 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		88004AC01E5D2C63005AB638 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		949E094A4AFC95C5DE71F913 /* Pods-iOSReactNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSReactNative.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSReactNative/Pods-iOSReactNative.debug.xcconfig"; sourceTree = "<group>"; };
+		E2AA4547A90D2E16FC4D9B7D /* Pods-iOSReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSReactNative.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSReactNative/Pods-iOSReactNative.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88004AA91E5D2C63005AB638 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFE44A368F8D3A74C0ABC8E8 /* libPods-iOSReactNative.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		88004AA31E5D2C63005AB638 = {
+			isa = PBXGroup;
+			children = (
+				88004AAE1E5D2C63005AB638 /* iOSReactNative */,
+				88004AAD1E5D2C63005AB638 /* Products */,
+				A493E47AB183065E2B5DBC65 /* Pods */,
+				98D462A1F5D47FE5DA6D5071 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		88004AAD1E5D2C63005AB638 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88004AAC1E5D2C63005AB638 /* iOSReactNative.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88004AAE1E5D2C63005AB638 /* iOSReactNative */ = {
+			isa = PBXGroup;
+			children = (
+				88004AB21E5D2C63005AB638 /* AppDelegate.h */,
+				88004AB31E5D2C63005AB638 /* AppDelegate.m */,
+				88004AB51E5D2C63005AB638 /* ViewController.h */,
+				88004AB61E5D2C63005AB638 /* ViewController.m */,
+				88004AB81E5D2C63005AB638 /* Main.storyboard */,
+				88004ABB1E5D2C63005AB638 /* images.xcassets */,
+				88004ABD1E5D2C63005AB638 /* LaunchScreen.storyboard */,
+				88004AC01E5D2C63005AB638 /* Info.plist */,
+				88004AAF1E5D2C63005AB638 /* Supporting Files */,
+			);
+			path = iOSReactNative;
+			sourceTree = "<group>";
+		};
+		88004AAF1E5D2C63005AB638 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				88004AB01E5D2C63005AB638 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		98D462A1F5D47FE5DA6D5071 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				689A3B325292552D1A97E35A /* libPods-iOSReactNative.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A493E47AB183065E2B5DBC65 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				949E094A4AFC95C5DE71F913 /* Pods-iOSReactNative.debug.xcconfig */,
+				E2AA4547A90D2E16FC4D9B7D /* Pods-iOSReactNative.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		88004AAB1E5D2C63005AB638 /* iOSReactNative */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88004AC31E5D2C63005AB638 /* Build configuration list for PBXNativeTarget "iOSReactNative" */;
+			buildPhases = (
+				2B3E376EA18F9D5781DC66CC /* [CP] Check Pods Manifest.lock */,
+				88004AA81E5D2C63005AB638 /* Sources */,
+				88004AA91E5D2C63005AB638 /* Frameworks */,
+				88004AAA1E5D2C63005AB638 /* Resources */,
+				104A9937C790EE2E14A5D5D4 /* [CP] Embed Pods Frameworks */,
+				D63B3876B30D78BDFDDD62E7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOSReactNative;
+			productName = iOSReactNative;
+			productReference = 88004AAC1E5D2C63005AB638 /* iOSReactNative.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88004AA41E5D2C63005AB638 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "刘硕";
+				TargetAttributes = {
+					88004AAB1E5D2C63005AB638 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = WD5EQTR7NX;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 88004AA71E5D2C63005AB638 /* Build configuration list for PBXProject "iOSReactNative" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 88004AA31E5D2C63005AB638;
+			productRefGroup = 88004AAD1E5D2C63005AB638 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88004AAB1E5D2C63005AB638 /* iOSReactNative */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88004AAA1E5D2C63005AB638 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88004ABF1E5D2C63005AB638 /* LaunchScreen.storyboard in Resources */,
+				88004ABC1E5D2C63005AB638 /* images.xcassets in Resources */,
+				88004ABA1E5D2C63005AB638 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		104A9937C790EE2E14A5D5D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSReactNative/Pods-iOSReactNative-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B3E376EA18F9D5781DC66CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D63B3876B30D78BDFDDD62E7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSReactNative/Pods-iOSReactNative-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88004AA81E5D2C63005AB638 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88004AB71E5D2C63005AB638 /* ViewController.m in Sources */,
+				88004AB41E5D2C63005AB638 /* AppDelegate.m in Sources */,
+				88004AB11E5D2C63005AB638 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		88004AB81E5D2C63005AB638 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88004AB91E5D2C63005AB638 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		88004ABD1E5D2C63005AB638 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88004ABE1E5D2C63005AB638 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		88004AC11E5D2C63005AB638 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		88004AC21E5D2C63005AB638 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88004AC41E5D2C63005AB638 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949E094A4AFC95C5DE71F913 /* Pods-iOSReactNative.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WD5EQTR7NX;
+				INFOPLIST_FILE = iOSReactNative/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liushuo.iOSReactNative.iOSReactNative;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		88004AC51E5D2C63005AB638 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2AA4547A90D2E16FC4D9B7D /* Pods-iOSReactNative.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WD5EQTR7NX;
+				INFOPLIST_FILE = iOSReactNative/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liushuo.iOSReactNative.iOSReactNative;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88004AA71E5D2C63005AB638 /* Build configuration list for PBXProject "iOSReactNative" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88004AC11E5D2C63005AB638 /* Debug */,
+				88004AC21E5D2C63005AB638 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88004AC31E5D2C63005AB638 /* Build configuration list for PBXNativeTarget "iOSReactNative" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88004AC41E5D2C63005AB638 /* Debug */,
+				88004AC51E5D2C63005AB638 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 88004AA41E5D2C63005AB638 /* Project object */;
+}

@@ -5,49 +5,23 @@
  */
 
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { AppRegistry } from 'react-native';
 
-export default class RNDemo extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+import HelloDemo from './src/Demo/hello world'
+import Bananas from './src/Demo/props'
+import LotsOfGreeting from './src/Demo/propsthis'
+import BlankApp from './src/Demo/state'
+import LotsOfStyleSheet from './src/Demo/style'
+import FixedDimensionsBasics from './src/Demo/width'
+import FixedDimensionsBasicsTest from './src/Demo/flexWidth'
+import FlexDirectionTest from './src/Demo/flexDirection'
+import JustifyContentTest from './src/Demo/justifyContent'
+import AlignItemsTest from './src/Demo/alignItems'
+import TextInputTest from './src/Demo/textInput'
+import ScrollViewTest from './src/Demo/scrollView'
+import ListViewTD from './src/Demo/listView'
+import NavigatorTest from  './src/Demo/navigator'
+import PlaygroundTest from  './src/Demo/animation'
+import ListView01 from  './src/Demo/ListView01'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
-AppRegistry.registerComponent('RNDemo', () => RNDemo);
+AppRegistry.registerComponent('RNDemo', () => ListView01);

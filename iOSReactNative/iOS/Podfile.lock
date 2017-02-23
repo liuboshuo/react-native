@@ -1,0 +1,34 @@
+PODS:
+  - React/Core (0.39.2):
+    - React/CSSLayout
+  - React/CSSLayout (0.39.2)
+  - React/RCTAnimation (0.39.2):
+    - React/Core
+  - React/RCTImage (0.39.2):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTNetwork (0.39.2):
+    - React/Core
+  - React/RCTText (0.39.2):
+    - React/Core
+  - React/RCTWebSocket (0.39.2):
+    - React/Core
+
+DEPENDENCIES:
+  - React/Core (from `../node_modules/react-native`)
+  - React/RCTAnimation (from `../node_modules/react-native`)
+  - React/RCTImage (from `../node_modules/react-native`)
+  - React/RCTNetwork (from `../node_modules/react-native`)
+  - React/RCTText (from `../node_modules/react-native`)
+  - React/RCTWebSocket (from `../node_modules/react-native`)
+
+EXTERNAL SOURCES:
+  React:
+    :path: ../node_modules/react-native
+
+SPEC CHECKSUMS:
+  React: 8c26f75b7d3a78fd1ddad8ab0e40e1a3e945960a
+
+PODFILE CHECKSUM: 99a3a4661388f3837164c374cafb2d0e63519575
+
+COCOAPODS: 1.2.0.rc.1
