@@ -18,7 +18,7 @@ export default class ListView01 extends Component {
     initData(){
         let array = [];
         for (let i = 0 ; i < 20 ; i++){
-            let object = {index:i,title:"测试"+ i ,content:  i / 2 == 0 ?  "时看风景十几人我ijewr时看风景十几人我ijewr" : "上搭建费是带你飞了开始的减肥我废物污染沃尔沃尔上搭建费是带你飞了开始的减肥我废物污染沃尔沃尔",imageName: i / 2 == 0 ? "../../img/Cromax.png" : "../../img/Standox.png"};
+            let object = {index:i,title:"测试"+ i ,content:  i / 2 == 0 ?  "时看风景十几人我ijewr时看风景十几人我ijewr" : "上搭建费是带你飞了开始的减肥我废物污染沃尔沃尔上搭建费是带你飞了开始的减肥我废物污染沃尔沃尔",imageName: i / 2 == 0 ? "../DemoImages/Cromax.png" : ".../DemoImages/Standox.png"};
             array.push(object);
         }
         return array;
@@ -37,7 +37,7 @@ export default class ListView01 extends Component {
 
                 <View style={ {flex: 1, flexDirection:"row"}}>
 
-                    <Image source={require("../../img/Cromax.png")}></Image>
+                    <Image source={require("../DemoImages/Cromax.png")}></Image>
 
                     <View style={ {flex:  1}}>
 
@@ -47,7 +47,7 @@ export default class ListView01 extends Component {
                     </View>
 
                     <View style={ [styles.arrow]}>
-                        <Image source={require('../../img/go.png')} style={{width:10,height:10} }   ></Image>
+                        <Image source={require('../DemoImages/go.png')} style={{width:10,height:10} }   ></Image>
                     </View>
 
 

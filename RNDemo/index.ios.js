@@ -23,5 +23,6 @@ import ListViewTD from './src/Demo/listView'
 import NavigatorTest from  './src/Demo/navigator'
 import PlaygroundTest from  './src/Demo/animation'
 import ListView01 from  './src/Demo/ListView01'
+import BagImageDemo from  './src/Demo/bagImageDemo'
 
-AppRegistry.registerComponent('RNDemo', () => ListView01);
+AppRegistry.registerComponent('RNDemo', () => BagImageDemo);
