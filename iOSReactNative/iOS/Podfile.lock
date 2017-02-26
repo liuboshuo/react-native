@@ -24,11 +24,11 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   React:
-    :path: ../node_modules/react-native
+    :path: "../node_modules/react-native"
 
 SPEC CHECKSUMS:
   React: 8c26f75b7d3a78fd1ddad8ab0e40e1a3e945960a
 
 PODFILE CHECKSUM: 99a3a4661388f3837164c374cafb2d0e63519575
 
-COCOAPODS: 1.2.0.rc.1
+COCOAPODS: 1.2.0

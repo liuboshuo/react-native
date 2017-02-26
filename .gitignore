@@ -5,6 +5,7 @@ local.properties
 *.iml
 
 # Android/IntelliJ
+RNDemo/android/.idea/
 RNDemo/build/
 RNDemo/.idea/
 RNDemo/android/.gradle
