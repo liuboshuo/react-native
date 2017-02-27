@@ -18,7 +18,7 @@ export default class ListView01 extends Component {
     initData(){
         let array = [];
         for (let i = 0 ; i < 20 ; i++){
-            let object = {index:i,title:"测试"+ i ,content:  i / 2 == 0 ?  "时看风景十几人我ijewr时看风景十几人我ijewr" : "上搭建费是带你飞了开始的减肥我废物污染沃尔沃尔上搭建费是带你飞了开始的减肥我废物污染沃尔沃尔",imageName: i / 2 == 0 ? "../DemoImages/Cromax.png" : ".../DemoImages/Standox.png"};
+            let object = {index:i,title:"测试"+ i ,content:  (i % 2 == 0) ?  "时看风景十几人我ijewr时看风景十几人我ijewr" : "上搭建费是带你飞了开始的减肥我废物污染沃尔沃尔上搭建费是带你飞了开始的减肥我废物污染沃尔沃尔",imageName: (i % 2 == 0) ? "Cromax" : "Standox"};
             array.push(object);
         }
         return array;
@@ -37,7 +37,8 @@ export default class ListView01 extends Component {
 
                 <View style={ {flex: 1, flexDirection:"row"}}>
 
-                    <Image source={require("../DemoImages/Cromax.png")}></Image>
+
+                    <Image source={{uri:model.imageName}} style={styles.imageIcon} ></Image>
 
                     <View style={ {flex:  1}}>
 
@@ -84,6 +85,11 @@ const  styles = StyleSheet.create({
         fontSize:16,
     },
 
+    imageIcon:{
+        marginRight:10,
+        width:100,
+        height:80
+    },
     fontContent:{
         color:'#aaa',
         fontSize:14,
