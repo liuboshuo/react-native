@@ -4,7 +4,7 @@
 import React , {Component} from 'react';
 import {AppRegistry , ListView , Text , View, StyleSheet,TouchableOpacity, Image, Dimensions} from 'react-native';
 
-let badgeDatas = require('../DemoImages/bag/BadgeData.json')
+let badgeDatas = require('../Json/BadgeData.json')
 let {width,height,scale} = Dimensions.get("window");
 
 let cols = 3;

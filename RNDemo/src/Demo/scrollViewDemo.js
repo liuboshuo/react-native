@@ -7,7 +7,7 @@ import {AppRegistry , ScrollView ,Alert, Text , View, StyleSheet,TouchableOpacit
 import {TimerMixin} from 'react-timer-mixin'
 
 let {width} = Dimensions.get("window");
-let allImages = require('../DemoImages/scrollViewDemoAllImages/ImageData.json')
+let allImages = require('../Json/ImageData.json')
 export default class scrollViewDemo extends Component {
 
     mixins: [TimerMixin];
