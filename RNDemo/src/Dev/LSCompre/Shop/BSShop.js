@@ -12,7 +12,7 @@ export default  class BSShop extends Component{
     render(){
         return(
             <View style={styles.containerStyle}>
-                <Text style={{color:'orange' , fontSize: 30}}>Shop</Text>
+                <Text style={{color:'orange' , fontSize: 15}}>Shop</Text>
             </View>
         )
     }

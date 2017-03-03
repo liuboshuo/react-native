@@ -12,7 +12,7 @@ export default  class BSMine extends Component{
     render(){
         return(
             <View style={styles.containerStyle}>
-                <Text style={{color:'orange' , fontSize: 30}}>Mine</Text>
+                <Text style={{color:'orange' , fontSize: 16}}>Mine</Text>
             </View>
         )
     }

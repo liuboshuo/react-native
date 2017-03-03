@@ -33,13 +33,13 @@ export default  class BSMore extends Component{
                     <View style={{marginTop:20}}>
                         <BSCommonCell title="省流量模式" isSwitch={true} />
 
-                        <BSCommonCell title="测试" />
-                        <BSCommonCell title="测试" rightDefaultTitle={'20.5M'}/>
+                        <BSCommonCell title="分享app" />
+                        <BSCommonCell title="清空缓存" rightDefaultTitle={'20.5M'}/>
                     </View>
 
 
                     <View style={{marginTop:20}}>
-                        <BSCommonCell title="修改密码" />
+                        <BSCommonCell title="反馈" />
                         <BSCommonCell title="个人信息" />
                         <BSCommonCell title="关于" />
                     </View>

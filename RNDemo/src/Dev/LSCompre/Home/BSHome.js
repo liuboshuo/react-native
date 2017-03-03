@@ -3,12 +3,11 @@
  */
 import React , {Component} from 'react';
 import {AppRegistry , TouchableOpacity,Alert, TextInput, Image, Text , View, StyleSheet, Dimensions} from 'react-native';
-import BSHomeDetail from './BSHomeDetail'
+
 let {width} = Dimensions.get('window');
 export default  class BSHome extends Component{
     constructor(props){
         super(props);
-
     }
     render(){
         return(
@@ -28,15 +27,7 @@ export default  class BSHome extends Component{
                         </TouchableOpacity>
                     </View>
                 </View>
-                <TouchableOpacity onPress={()=>{
-                    this.props.navigator.push({
-                        name:"测试跳转",
-                        component:BSHomeDetail
-                    })
-                }}>
-                    <Text style={{color:'orange' , fontSize: 30}}>Home</Text>
-                </TouchableOpacity>
-
+                <Text style={{color:'orange' , fontSize: 16}}>Home</Text>
             </View>
         )
     }

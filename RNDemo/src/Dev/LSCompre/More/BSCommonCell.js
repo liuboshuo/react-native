@@ -11,7 +11,9 @@ export default class BSCommonCell extends Component {
     static defaultProps = {
 
         title:"",
+
         isSwitch:false,
+
         rightDefaultTitle:""
 
     }

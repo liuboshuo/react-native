@@ -40,9 +40,9 @@ class BSMain extends Component{
             selectedTitleStyle={styles.selecttitleStyle}>
             <Navigator
                 initialRoute={
-                            {name:name,component:component}
+                            {title:name, name:name,component:component}
                         }
-                configureScene={(route, routeStack)=>{
+                configureScene={()=>{
                             return Navigator.SceneConfigs.PushFromRight;
                         }}
                 renderScene={(route, navigator)=>{
