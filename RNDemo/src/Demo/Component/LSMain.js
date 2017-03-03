@@ -32,6 +32,7 @@ export default class LSMain extends Component{
                         onPress={()=>this.setState({selectTabBarIndex:'0'})}
                     >
                         <NavigatorIOS
+                            tintColor="orange"
                             style={{flex:1}}
                             initialRoute={
                                 {
@@ -39,7 +40,6 @@ export default class LSMain extends Component{
                                     title:"测试",
                                     leftButtonIcon:require('../../DemoImages/NavigationBar/navigationbar_friendattention@2x.png'),
                                     rightButtonIcon:require('../../DemoImages/NavigationBar/navigationbar_pop.png'),
-                                    tintColor:"orange"
                                 }
                             }
                         >
