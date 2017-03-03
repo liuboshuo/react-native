@@ -2,18 +2,34 @@
  * Created by liushuo on 17/3/3.
  */
 import React , {Component} from 'react';
-import {AppRegistry , TouchableOpacity,Alert, TextInput, Image, Text , View, StyleSheet, Dimensions} from 'react-native';
+import {AppRegistry ,
+        TouchableOpacity,
+        Alert,
+        TextInput,
+        Image,
+        Text ,
+        View,
+        StyleSheet,
+        Dimensions
+    }
+from 'react-native';
 
-let {width} = Dimensions.get('window');
+let width = Dimensions.get('window').width;
+
 export default  class BSHome extends Component{
     constructor(props){
         super(props);
     }
+
     render(){
         return(
+
             <View style={styles.containerStyle}>
+
                 <View style={styles.statusBarStyle}></View>
+
                 <View style={styles.navViewStyle}>
+
                     <TouchableOpacity onPress={()=>{Alert.alert("点击")}}>
                         <Text style={styles.leftButtonStyle}>上海</Text>
                     </TouchableOpacity>
@@ -26,9 +42,13 @@ export default  class BSHome extends Component{
                             <Image source={{uri:"icon_homepage_scan"}} style={styles.rightViewInnerImgStyle}/>
                         </TouchableOpacity>
                     </View>
+
                 </View>
+
                 <Text style={{color:'orange' , fontSize: 16}}>Home</Text>
+
             </View>
+
         )
     }
 }
