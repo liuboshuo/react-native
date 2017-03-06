@@ -26,5 +26,6 @@ import ListView01 from  './src/Demo/ListView01'
 import BagImageDemo from  './src/Demo/bagImageDemo'
 import qqLoginDemo from './src/Demo/qqLoginDemo'
 import scrollViewDemo from  './src/Demo/scrollViewDemo'
+import BSMain from './src/Dev/LSCompre/Main/BSMain'
 
-AppRegistry.registerComponent('RNDemo', () => scrollViewDemo);
+AppRegistry.registerComponent('RNDemo', () => BSMain);

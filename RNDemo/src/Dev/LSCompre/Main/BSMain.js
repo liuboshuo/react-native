@@ -2,7 +2,7 @@
  * Created by liushuo on 17/3/3.
  */
 import React , {Component} from 'react';
-import {AppRegistry ,  Text , View, StyleSheet, Navigator, Dimensions, Image} from 'react-native';
+import {AppRegistry ,  Text , View, StyleSheet, Navigator, Dimensions, Image, Platform} from 'react-native';
 import TabNavigator from 'react-native-tab-navigator'
 import BSHome from './../Home/BSHome'
 import BSShop from './../Shop/BSShop'
@@ -62,8 +62,8 @@ export default BSMain;
 
 const styles = StyleSheet.create({
     tabIconStyle:{
-        width:30,
-        height:30
+        width: Platform.OS == 'ios'? 30 : 25,
+        height: Platform.OS == 'ios'? 30 : 25
     },
     selecttitleStyle:{
         color:'orange'

@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
         width:8,
     },
     leftTextStyle:{
+        color:'gray',
         marginLeft:10,
         fontSize:15
     }

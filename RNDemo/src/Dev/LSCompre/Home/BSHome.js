@@ -10,7 +10,8 @@ import {AppRegistry ,
         Text ,
         View,
         StyleSheet,
-        Dimensions
+        Platform,
+        Dimensions,
     }
 from 'react-native';
 
@@ -19,6 +20,9 @@ let width = Dimensions.get('window').width;
 export default  class BSHome extends Component{
     constructor(props){
         super(props);
+        this.state = {
+            searchTextInputContent:''
+        }
     }
 
     render(){
@@ -33,7 +37,15 @@ export default  class BSHome extends Component{
                     <TouchableOpacity onPress={()=>{Alert.alert("点击")}}>
                         <Text style={styles.leftButtonStyle}>上海</Text>
                     </TouchableOpacity>
-                    <TextInput style={styles.middleTextStyle} placeholder={'搜索'}/>
+                    <TextInput style={styles.middleTextStyle}
+                               underlineColorAndroid={'transparent'}
+                               placeholder={'搜索'}
+                               blurOnSubmit={true}
+                               clearButtonMode={'always'}
+                               onChangeText={(text)=>this.setState({searchTextInputContent:text})}
+                               onEndEditing={()=>{Alert.alert('输入框内容' + this.state.searchTextInputContent)}}
+                               onSubmitEditing={()=>{Alert.alert('输入框内容' + this.state.searchTextInputContent)}}
+                    />
                     <View style={styles.rightOuterViewStyle}>
                         <TouchableOpacity onPress={()=>{Alert.alert("点击")}}>
                             <Image source={{uri:"icon_homepage_message"}} style={styles.rightViewInnerImgStyle}/>
@@ -45,7 +57,7 @@ export default  class BSHome extends Component{
 
                 </View>
 
-                <Text style={{color:'orange' , fontSize: 16}}>Home</Text>
+                <Text style={{color:'orange' , fontSize: 16}}>1Home</Text>
 
             </View>
 
@@ -68,7 +80,7 @@ const styles = StyleSheet.create({
     },
     statusBarStyle:{
         width:width,
-        height:20,
+        height:Platform.OS == 'ios' ? 20 : 0,
         backgroundColor:'orange',
     },
     leftButtonStyle:{
@@ -82,6 +94,9 @@ const styles = StyleSheet.create({
         borderRadius:15,
         alignSelf:'center',
         paddingLeft:10,
+        paddingTop:0,
+        paddingBottom:0,
+        paddingRight:10,
         fontSize:13
     },
     rightOuterViewStyle:{

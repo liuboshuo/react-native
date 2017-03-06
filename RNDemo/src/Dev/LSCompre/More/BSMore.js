@@ -2,7 +2,8 @@
  * Created by liushuo on 17/3/3.
  */
 import React , {Component} from 'react';
-import {AppRegistry , TouchableOpacity,Alert, ScrollView, TextInput, Image,  Text , View, StyleSheet, Dimensions} from 'react-native';
+import {AppRegistry , TouchableOpacity,Alert, ScrollView, TextInput,
+    Platform, Image,  Text , View, StyleSheet, Dimensions} from 'react-native';
 import BSCommonCell from './BSCommonCell'
 
 let {width} = Dimensions.get('window')
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
     },
     statusBarStyle:{
         width:width,
-        height:20,
+        height:Platform.OS == 'ios' ? 20 : 0,
         backgroundColor:'orange',
     },
 
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
     },
     rightBtnStyle:{
         position:'absolute',
-        top:6,
+        top:9,
         right:10,
     },
     rightViewInnerImgStyle:{
