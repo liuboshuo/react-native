@@ -14,7 +14,9 @@ export default  class BSMine extends Component{
     render(){
         return(
             <View style={styles.containerStyle}>
-                <ScrollView>
+                <ScrollView
+                contentInset={{top:-400}}
+                contentOffset={{y:400}}>
                     <BSTopView/>
                     <View style={styles.outViewStyle}>
                         <BSCommonMyCenterCell

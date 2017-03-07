@@ -52,20 +52,17 @@ export default  class BSTopView extends Component{
 }
 
 const styles = StyleSheet.create({
-
     containerStyle:{
-        height:150,
+        height:550,
         backgroundColor:'rgba(255,96,0,1.0)',
 
     },
-
     accountViewStyle:{
-        marginTop:50,
+        marginTop:450,
         flexDirection:'row',
         alignItems:"center",
         justifyContent:'space-around'
     },
-
     leftIconStyle:{
         width:50,
         height:50,

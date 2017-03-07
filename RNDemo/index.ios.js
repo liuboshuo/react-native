@@ -32,5 +32,6 @@ import ListView04 from './src/Demo/ListView04'
 import SystemTabBar from './src/Demo/SystemTabBar'
 import LSMain from './src/Demo/Component/LSMain'
 import BSMain from './src/Dev/LSCompre/Main/BSMain'
+import BSFirstTopListView from './src/Dev/LSCompre/Home/BSFirstTopListView'
 
 AppRegistry.registerComponent('RNDemo', () => BSMain);

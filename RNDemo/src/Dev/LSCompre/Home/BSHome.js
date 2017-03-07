@@ -12,9 +12,10 @@ import {AppRegistry ,
         StyleSheet,
         Platform,
         Dimensions,
+        ScrollView
     }
 from 'react-native';
-
+import BSFirstTopView from './BSFirstTopView'
 let width = Dimensions.get('window').width;
 
 export default  class BSHome extends Component{
@@ -57,7 +58,10 @@ export default  class BSHome extends Component{
 
                 </View>
 
-                <Text style={{color:'orange' , fontSize: 16}}>1Home</Text>
+                <ScrollView>
+                    <BSFirstTopView />
+                </ScrollView>
+
 
             </View>
 
@@ -68,6 +72,7 @@ export default  class BSHome extends Component{
 const styles = StyleSheet.create({
     containerStyle:{
         flex:1,
+        backgroundColor:'#e8e8e8'
     },
 
     navViewStyle:{
