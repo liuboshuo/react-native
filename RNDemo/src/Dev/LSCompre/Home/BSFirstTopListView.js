@@ -28,7 +28,7 @@ export default  class BSFirstTopListView extends Component{
 
     }
 
-    renderRow0(data,sectionID,rowID,highlightRow){
+    renderRow0(data){
         console.log(data);
         return (
             <TouchableOpacity onPress={()=>this.clickRow()}>
@@ -43,7 +43,7 @@ export default  class BSFirstTopListView extends Component{
     }
     render() {
         return (
-                <ListView contentContainerStyle={styles.listView} dataSource={this.state.dataSource} renderRow={(data,sectionID,rowID,highlightRow)=>{ return this.renderRow0(data,sectionID,rowID,highlightRow)}} scrollEnabled={false}>
+                <ListView contentContainerStyle={styles.listView} dataSource={this.state.dataSource} renderRow={(data,sectionID,rowID,highlightRow)=>{ return this.renderRow0(data)}} scrollEnabled={false}>
 
                 </ListView>
         )

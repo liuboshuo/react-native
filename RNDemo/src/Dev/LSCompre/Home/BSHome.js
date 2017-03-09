@@ -16,6 +16,12 @@ import {AppRegistry ,
     }
 from 'react-native';
 import BSFirstTopView from './BSFirstTopView'
+import BSFirstMidleView from  './BSFirstMidleView'
+import BSHomeSecond from './BSHomeSecond'
+import BSFirstBottomView from './BSFirstBottomView'
+import BSBottomTopView from  './BSBottomTopView'
+import BSShopDetail from  './BSShopDetail'
+
 let width = Dimensions.get('window').width;
 
 export default  class BSHome extends Component{
@@ -60,12 +66,35 @@ export default  class BSHome extends Component{
 
                 <ScrollView>
                     <BSFirstTopView />
+
+                    <BSFirstMidleView firstCommonCallBack={()=>this.pushDetailView()} leftTestCallBack={()=>this.pushSecond()}/>
+                    <BSFirstBottomView />
+                    <BSBottomTopView popToShopDetail={(url)=>this.shopDetail(url)}/>
                 </ScrollView>
 
 
             </View>
 
         )
+    }
+    shopDetail(url)
+    {
+        this.props.navigator.push({
+            component:BSShopDetail,
+            passProps:{url:url.replace("imeituan://www.meituan.com/web/?url=","")}
+        });
+    }
+    pushDetailView(){
+        this.props.navigator.push({
+            component:BSHomeSecond
+        });
+    }
+    pushSecond(){
+        this.props.navigator.push(
+            {
+            component:BSHomeSecond
+            }
+        );
     }
 }
 
