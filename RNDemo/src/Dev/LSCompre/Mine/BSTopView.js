@@ -2,7 +2,7 @@
  * Created by ls-mac on 2017/3/6.
  */
 import React , {Component} from 'react';
-import {AppRegistry ,  Text , View, StyleSheet, Dimensions, ScrollView, Image, TouchableOpacity, Alert} from 'react-native';
+import {AppRegistry ,  Text , View, Platform, StyleSheet, Dimensions, ScrollView, Image, TouchableOpacity, Alert} from 'react-native';
 
 let {width} = Dimensions.get('window');
 
@@ -53,12 +53,12 @@ export default  class BSTopView extends Component{
 
 const styles = StyleSheet.create({
     containerStyle:{
-        height:550,
+        height: Platform.OS == 'ios'? 550 : 150,
         backgroundColor:'rgba(255,96,0,1.0)',
 
     },
     accountViewStyle:{
-        marginTop:450,
+        marginTop:Platform.OS == 'ios' ? 450 : 50,
         flexDirection:'row',
         alignItems:"center",
         justifyContent:'space-around'
