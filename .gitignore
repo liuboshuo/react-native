@@ -12,12 +12,19 @@ RNDemo/android/.gradle
 RNDemo/android/build
 RNDemo/android/app/build
 
+app_learn/android/.idea/
+app_learn/build/
+app_learn/.idea/
+app_learn/android/.gradle
+app_learn/android/build
+app_learn/android/app/build
+
 
 # node.js
 #
 RNDemo/node_modules/
 iOSReactNative/node_modules/
-
+app_learn/node_modules/
 
 #pod 
 iOSReactNative/iOS/pods
