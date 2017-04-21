@@ -36,6 +36,11 @@
 		2DCD954D1E0B4F2C00145EB5 /* RNDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RNDemoTests.m */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		8826AC781EA5D3CE00D71D22 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8826AC771EA5D3CE00D71D22 /* libc++.1.tbd */; };
+		8826AC7A1EA5D89A00D71D22 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8826AC791EA5D89A00D71D22 /* CFNetwork.framework */; };
+		8826AC7C1EA5D8A300D71D22 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8826AC7B1EA5D8A300D71D22 /* SystemConfiguration.framework */; };
+		8826AC7E1EA5D8AC00D71D22 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8826AC7D1EA5D8AC00D71D22 /* Security.framework */; };
+		8826AC801EA5D8B200D71D22 /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8826AC7F1EA5D8B200D71D22 /* libz.1.1.3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -255,6 +260,11 @@
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		8826AC771EA5D3CE00D71D22 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		8826AC791EA5D89A00D71D22 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		8826AC7B1EA5D8A300D71D22 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8826AC7D1EA5D8AC00D71D22 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		8826AC7F1EA5D8B200D71D22 /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +280,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8826AC801EA5D8B200D71D22 /* libz.1.1.3.tbd in Frameworks */,
+				8826AC7E1EA5D8AC00D71D22 /* Security.framework in Frameworks */,
+				8826AC7C1EA5D8A300D71D22 /* SystemConfiguration.framework in Frameworks */,
+				8826AC7A1EA5D89A00D71D22 /* CFNetwork.framework in Frameworks */,
+				8826AC781EA5D3CE00D71D22 /* libc++.1.tbd in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -467,6 +482,7 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* RNDemoTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
+				8826AC761EA5D3CE00D71D22 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -481,6 +497,18 @@
 				2D02E4901E0B4A5D006451C7 /* RNDemo-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8826AC761EA5D3CE00D71D22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8826AC7F1EA5D8B200D71D22 /* libz.1.1.3.tbd */,
+				8826AC7D1EA5D8AC00D71D22 /* Security.framework */,
+				8826AC7B1EA5D8A300D71D22 /* SystemConfiguration.framework */,
+				8826AC791EA5D89A00D71D22 /* CFNetwork.framework */,
+				8826AC771EA5D3CE00D71D22 /* libc++.1.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1002,6 +1030,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = WD5EQTR7NX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = RNDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1020,6 +1052,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WD5EQTR7NX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = RNDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
