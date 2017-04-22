@@ -11,6 +11,7 @@ RNDemo/.idea/
 RNDemo/android/.gradle
 RNDemo/android/build
 RNDemo/android/app/build
+RNDemo/ios/build
 
 app_learn/android/.idea/
 app_learn/build/
@@ -18,7 +19,7 @@ app_learn/.idea/
 app_learn/android/.gradle
 app_learn/android/build
 app_learn/android/app/build
-
+app_learn/ios/build
 
 # node.js
 #
