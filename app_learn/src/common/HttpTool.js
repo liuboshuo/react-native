@@ -22,15 +22,17 @@ export  default class HttpTool extends Component{
                 url += '&' + paramsArray.join('&')
             }
         }
-        //fetch请求
-        fetch(url,{
-            method: 'GET',
-        })
-            .then((response) => response.json())
-            .then((responseJSON) => {
-            callback(responseJSON,null);
-        }).catch(function (error) {
-            callback(null,error);
+        return new Promise((resolve, reject) => {
+            fetch(url,{
+                method: 'GET',
+            })
+                .then((response) => response.json())
+                .then((responseJSON) => {
+                    resolve(responseJSON);
+                }).catch(function (error) {
+                    console.warn(error);
+                    reject(error);
+            });
         });
     }
     /*
@@ -39,20 +41,26 @@ export  default class HttpTool extends Component{
      *  data:参数
      *  callback:回调函数
      * */
-    static post(url,params,headers,callback){
-        //fetch请求
-        fetch(url,{
-            method: 'POST',
-            headers:{
-                'token': headers
-            },
-            body:JSON.stringify(params)
+    static post(url,params){
+        return new Promise((resolve, reject) => {
+            fetch(url,{
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            })
+                .then((response) => {
+                    return response.json();
+                })
+                .then((jsonData) => {
+                    resolve(jsonData);
+                })
+                .catch((error) => {
+                    console.warn(error);
+                    reject(error);
+                });
         })
-            .then((response) => response.json())
-            .then((responseJSON) => {
-                callback(responseJSON,null);
-        }) .catch(function (error) {
-            callback(null,error);
-        });
+
     }
 }

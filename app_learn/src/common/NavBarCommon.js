@@ -33,7 +33,7 @@ class NavigationBar extends Component {
                             ?
                             <TouchableOpacity style={styles.leftNav} onPress={ ()=>{leftAction()} }>
                                 <View style={{alignItems: 'center'}}>
-                                    <Image source={ leftImage }/>
+                                    <Image source={ leftImage } style={{width:30,height:30}}/>
                                 </View>
                             </TouchableOpacity>
                             : null

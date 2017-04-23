@@ -26,6 +26,12 @@ import ListView01 from  './src/Demo/ListView01'
 import BagImageDemo from  './src/Demo/bagImageDemo'
 import qqLoginDemo from './src/Demo/qqLoginDemo'
 import scrollViewDemo from  './src/Demo/scrollViewDemo'
+import ListView02 from  './src/Demo/ListView02'
+import ListView03 from  './src/Demo/ListView03'
+import ListView04 from './src/Demo/ListView04'
+import SystemTabBar from './src/Demo/SystemTabBar'
+import LSMain from './src/Demo/Component/LSMain'
 import BSMain from './src/Dev/LSCompre/Main/BSMain'
+import BSFirstTopListView from './src/Dev/LSCompre/Home/BSFirstTopListView'
 
 AppRegistry.registerComponent('RNDemo', () => BSMain);
