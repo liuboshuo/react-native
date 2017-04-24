@@ -2,7 +2,7 @@
  * Created by liushuo on 17/4/24.
  */
 import React , {Component} from 'react';
-import {AppRegistry , Dimensions, ListView , Text , View, StyleSheet,TouchableOpacity, Image} from 'react-native';
+import { Dimensions , Text , View, StyleSheet,TouchableOpacity, Image} from 'react-native';
 import MyListView from './myListView'
 
 let screenWidth = Dimensions.get("window").width
@@ -19,23 +19,11 @@ export default class RefreshableGroupListView extends Component {
     }
 
     clickRow(model){
+
     }
 
     loadData(pageNo,callback,option){
-        let sectionIds = [];
-        let rowIds = [];
-        let blobData = [];
-
-        for (let i = 0;i<allCars.length;i++){
-            sectionIds[i] = i;
-            blobData[i] = allCars[i].title;
-            let tempArray = [];
-            for (let j = 0; j<allCars[i].cars.length;j++){
-                tempArray.push(j);
-                blobData[i+":"+j] = allCars[i].cars[j];
-            }
-            rowIds.push(tempArray);
-        }
+        let datas = allCars;
         callback(allCars);
 
     }

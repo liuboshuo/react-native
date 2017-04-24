@@ -11,6 +11,7 @@
     "react-native": "0.43.4",
     "react-native-gifted-listview": "0.0.15",
     "react-native-gifted-spinner": "^0.1.0",
+    "react-native-pull": "^2.0.2",
     "react-native-tab-navigator": "^0.3.3"
   },
   "devDependencies": {

@@ -7,10 +7,6 @@ import {
     Text,
     Image,
     StyleSheet,
-    ListView,
-    RefreshControl,
-    Dimensions,
-    Platform,
     TouchableOpacity
 } from 'react-native';
 import NavigationBar from './../../common/NavBarCommon'
@@ -106,11 +102,11 @@ const styles = StyleSheet.create({
     },
     textView:{
         width:Constants.screenWidth - 80,        // marginLeft:3
-
     },
     cellImage:{
         width:60,
-        height:50
+        height:50,
+        marginRight:10
     }
 })
 

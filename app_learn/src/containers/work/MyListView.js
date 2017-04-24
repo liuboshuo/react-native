@@ -15,14 +15,10 @@ import {
 export default class MyListView extends Component {
 
     getSectionData(dataBlob,sectionId){
-        console.log(dataBlob)
         return dataBlob[sectionId];
     }
     getRowData(dataBlob,sectionId,rowId){
-        // console.log(sectionId + rowId);
-        let section = dataBlob[sectionId];
-        let data = section[rowId];
-        return data;
+        return dataBlob[sectionId][rowId];;
     }
 
     constructor(props){
@@ -49,7 +45,7 @@ export default class MyListView extends Component {
     static defaultProps = {
         enableFooter:true,
         withSections:false,
-        onEndReachedThreshold:0,
+        onEndReachedThreshold:40,
         onFetch(pageNo, callback, options) { callback([]); },
     }
 
@@ -68,6 +64,7 @@ export default class MyListView extends Component {
         this.props.onFetch(1,this.reloadData.bind(this),options)
     }
     onEndReached(options = {}){
+        console.log("-------------")
         if (this.props.enableFooter) {
             //如果加载全部 | 正在刷新 | 正在加载 return
             if (this.state.isLoadingMore === 2 || this.state.isRefreshing || this.state.isLoadingMore === 1) {

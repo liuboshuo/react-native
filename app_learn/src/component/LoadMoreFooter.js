@@ -13,11 +13,20 @@ import {
 } from 'react-native';
 
 export default class LoadMoreFooter extends Component {
-
     render () {
-
+        let text = null;
+        {
+            if(this.props.isLoadAll == 0){
+                text = "下拉加载";
+            }else if(this.props.isLoadAll == 1){
+                text = "正在加载中...";
+            }else if(this.props.isLoadAll == 2){
+                text = "已全部加载";
+            }
+        }
         return(<View style={styles.footer}>
-            <Text style={styles.footerTitle}>{this.props.isLoadAll ? "已全部加载" : "正在加载中..."}</Text>
+            <Text style={styles.footerTitle}>{text
+                 }</Text>
         </View>)
 
     }

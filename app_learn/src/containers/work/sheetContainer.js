@@ -32,7 +32,9 @@ class SheetContainer extends Component {
             pageNo : 1,
             total : 0,
             isRefreshing:true,
-            isLoadMore:false,
+            isLoadAll:0,
+            isLoading:false,
+            productNormalList:[]
         }
     }
 
@@ -43,22 +45,7 @@ class SheetContainer extends Component {
     }
 
     componentDidMount(){
-        HttpTool.post("https://m.alibaba.com/products/bottle/" + this.state.pageNo + ".html?XPJAX=1")
-            .then((response)=>{
-                console.log(response);
-                let productNormalList = response.productNormalList;
-                let total = response.pagination.total;
-                this.stopRefresh(false);
-                this.setState(
-                    {
-                        pageNo:this.state.pageNo++,
-                        total:total,
-                        dataSource:this.state.dataSource.cloneWithRows(productNormalList)
-                });
-        }).catch(function (error) {
-            console.log(error);
-            this.stopRefresh(false);
-        });
+        this.loadData(this.state.pageNo);
     }
     gotodetail(data){
         const {navigator} = this.props;
@@ -70,7 +57,6 @@ class SheetContainer extends Component {
         })
     }
     renderRow(data){
-        console.log(data);
         const {imagePath,productName,companyName} = data;
         return (
             <TouchableOpacity onPress={()=>this.gotodetail(data)}>
@@ -81,7 +67,6 @@ class SheetContainer extends Component {
                             {productName}
                         </Text>
                         <Text>
-
                             {companyName}
                         </Text>
                     </View>
@@ -90,24 +75,74 @@ class SheetContainer extends Component {
             );
     }
     renderFooter() {
-        return (<LoadMoreFooter />)
+        return (<LoadMoreFooter isLoadAll={this.state.isLoadAll} />)
+    }
+    onEndReached(){
+        if(this.state.pageNo>this.state.total || this.state.isLoading || this.state.isRefreshing){
+            return;
+        }
+        this.setState({isLoadAll:1});
+        this.loadData(this.state.pageNo);
+    }
+    loadData(pageNo){
+        console.log(pageNo);
+        this.setState({isLoading:true});
+        HttpTool.post("https://m.alibaba.com/products/bottle/" + pageNo + ".html?XPJAX=1")
+            .then((response)=>{
+                this.state.productNormalList = this.state.productNormalList.concat(response.productNormalList);
+                let total = response.pagination.total;
+                console.log(total);
+                this.stopRefresh(false);
+                this.setState({dataSource:this.state.dataSource.cloneWithRows(this.state.productNormalList)});
+
+
+
+
+                this.state.pageNo++
+                this.setState(
+                    {
+                        pageNo:this.state.pageNo,
+                        total:total,
+                        isLoading:false
+                    });
+                if (this.state.pageNo>response.pagination.total){
+                    this.setState({isLoadAll:2})
+                }
+            }).catch(function (error) {
+                this.setState({isLoading:false,isLoadAll:0});
+                this.stopRefresh(false);
+        });
     }
     render() {
         const {navigator} = this.props;
         return (
             <View style={styles.container}>
-                <NavigationBar title="工单"/>
+                <NavigationBar title="工单" rightTitle="点击" rightAction={()=>{
+
+                    let pro = this.state.productNormalList[0]
+                    pro.companyName = "测试";
+                    this.state.productNormalList[0] = pro;
+                    let arr = [];
+                    for (let j = 0; j<this.state.productNormalList.length;j++){
+                        let model = this.state.productNormalList[j];
+                        arr.push(model);
+                    }
+                    this.setState({
+                        productNormalList:arr,
+                    })
+                    console.log(this.state.productNormalList + "  " + arr );
+                    this.setState({dataSource:this.state.dataSource.cloneWithRows(this.state.productNormalList)});
+                }}/>
                 <ListView dataSource={this.state.dataSource}
                           renderRow={(data)=>this.renderRow(data)}
+                          onEndReached={()=>this.onEndReached()}
                           refreshControl= {
                               <RefreshControl
                                     refreshing={this.state.isRefreshing}
-                                    //tintColor="gray"
-							        //colors={['#ff0000', '#00ff00', '#0000ff']}
-							        //progressBackgroundColor="gray"
                               ></RefreshControl>
                           }
                           renderFooter={ this.renderFooter.bind(this) }
+                          enableEmptySections={true}
                 />
             </View>
         )

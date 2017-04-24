@@ -52,9 +52,6 @@ export default class App extends Component {
                 selectedTitleStyle={styles.selecttitleStyle}>
                 <MyCenterContainer {...this.props}/>
             </TabNavigator.Item>
-            {/*{this.renderTabItem("work", "工单", "", "","", MsgListContainer)}*/}
-            {/*{this.renderTabItem("msg", "消息", "", "","", View)}*/}
-            {/*{this.renderTabItem("center", "我的", "", "","", View)}*/}
         </TabNavigator>)
     }
 }
