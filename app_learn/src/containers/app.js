@@ -8,6 +8,8 @@ import TabNavigator from 'react-native-tab-navigator'
 import MsgListContainer from './msg/msgListContainer'
 import SheetContainer from './work/sheetContainer'
 import MyCenterContainer from './my/myCenterContainer'
+import RefreshablePlainListView from './work/refreshablePlainListView'
+import RefreshableGroupListView from './work/refreshableGroupListView'
 
 export default class App extends Component {
 
@@ -28,7 +30,7 @@ export default class App extends Component {
                 //{/*renderSelectedIcon={() => <Image source={{uri:selectIconName}} style={styles.tabIconStyle}/>}*/}
                 onPress={() => this.setState({ selectTabItemName: "tab1" })}
                 selectedTitleStyle={styles.selecttitleStyle}>
-                <SheetContainer {...this.props}/>
+                <RefreshableGroupListView {...this.props}/>
             </TabNavigator.Item>
 
             <TabNavigator.Item
