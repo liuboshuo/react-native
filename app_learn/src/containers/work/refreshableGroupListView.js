@@ -2,8 +2,9 @@
  * Created by liushuo on 17/4/24.
  */
 import React , {Component} from 'react';
+import NavigationBar from './../../common/NavBarCommon'
 import { Dimensions , Text , View, StyleSheet,TouchableOpacity, Image} from 'react-native';
-import MyListView from './myListView'
+import MyListView from './MyListView'
 
 let screenWidth = Dimensions.get("window").width
 let width = 100;
@@ -23,8 +24,9 @@ export default class RefreshableGroupListView extends Component {
     }
 
     loadData(pageNo,callback,option){
-        let datas = allCars;
-        callback(allCars);
+        setTimeout(function () {
+            callback(allCars,{'key':'cars'});
+        },1000);
 
     }
     senderSection0(sectionData){
@@ -50,9 +52,7 @@ export default class RefreshableGroupListView extends Component {
     render() {
         return (
             <View style={{flex:1}}>
-                <View style={styles.navigationStyle}>
-
-                </View>
+                <NavigationBar title="工单"/>
                 <MyListView
                     onFetch={this.loadData.bind(this)}
                     renderRow={(data,sectionID,rowID,highlightRow)=>{ return this.renderRow0(data,sectionID,rowID,highlightRow)}}
@@ -66,11 +66,6 @@ export default class RefreshableGroupListView extends Component {
 }
 
 const  styles = StyleSheet.create({
-    navigationStyle:{
-        backgroundColor:'purple',
-        width:screenWidth,
-        height:64
-    },
 
     cellStyle:{
         flexDirection:'row',

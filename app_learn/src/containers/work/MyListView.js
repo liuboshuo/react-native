@@ -14,11 +14,11 @@ import {
 
 export default class MyListView extends Component {
 
-    getSectionData(dataBlob,sectionId){
+    getSectionHeaderData(dataBlob,sectionId){
         return dataBlob[sectionId];
     }
     getRowData(dataBlob,sectionId,rowId){
-        return dataBlob[sectionId][rowId];;
+        return dataBlob[sectionId+ ':' + rowId];
     }
 
     constructor(props){
@@ -26,7 +26,7 @@ export default class MyListView extends Component {
         let dataSource = null;
         if (this.props.withSections){
             dataSource = new ListView.DataSource({
-                getSectionData:this.getSectionData,
+                getSectionHeaderData:this.getSectionHeaderData,
                 getRowData:this.getRowData,
                 rowHasChanged:(r1,r2) => r1 !== r2,
                 sectionHeaderHasChanged: (s1, s2) => s1 !== s2
@@ -36,11 +36,12 @@ export default class MyListView extends Component {
         }
         this.state = {
             dataSource:dataSource,
-            datas:[],
-            pageNo:1,
             isRefreshing:true,
             isLoadingMore:0
         }
+        this.setPageNo(1)
+        this.setDatas([]);
+        this.setIsRefreshing(true);
     }
     static defaultProps = {
         enableFooter:true,
@@ -49,11 +50,22 @@ export default class MyListView extends Component {
         onFetch(pageNo, callback, options) { callback([]); },
     }
 
-    setPageNo(pageNo) {this.setState({pageNo:pageNo})}
-    getPageNo() { return this.state.pageNo}
-    setDatas(datas) { this.setState({datas:datas})}
-    getDatas() {return this.state.datas}
-    setIsRefreshing(isRefreshing) {this.setState({isRefreshing:isRefreshing})}
+    setPageNo(pageNo) {this.pageNo=pageNo}
+    getPageNo() { return this.pageNo}
+    setDatas(datas) { this.datas=datas}
+    getDatas() {return this.datas}
+    setIsRefreshing(isRefreshing) {
+        this.isRefreshing = isRefreshing ;
+        if (this.state.isRefreshing != isRefreshing){
+            this.setState({isRefreshing : isRefreshing})
+        }
+    }
+    setRowIds(rowIds){this.rowIds = rowIds}
+    getRowIds(){return this.rowIds}
+    setSectionIds(sectionIds){this.sectionIds = sectionIds}
+    getSectionIds(){return this.sectionIds}
+
+    getIsRefreshing(){ return this.isRefreshing }
 
     componentDidMount(){
         this.props.onFetch(this.getPageNo(),this.reloadData.bind(this),{})
@@ -61,13 +73,13 @@ export default class MyListView extends Component {
     onRefresh(options = {}){
         this.setPageNo(1);
         this.setIsRefreshing(true);
-        this.props.onFetch(1,this.reloadData.bind(this),options)
+        this.props.onFetch(this.getPageNo(),this.reloadData.bind(this),options)
     }
     onEndReached(options = {}){
         console.log("-------------")
         if (this.props.enableFooter) {
             //如果加载全部 | 正在刷新 | 正在加载 return
-            if (this.state.isLoadingMore === 2 || this.state.isRefreshing || this.state.isLoadingMore === 1) {
+            if (this.state.isLoadingMore === 2 || this.getIsRefreshing() || this.state.isLoadingMore === 1) {
                 return;
             }
             //修改footer的状态为正在加载中
@@ -77,85 +89,102 @@ export default class MyListView extends Component {
     }
     reloadData(datas = [],options = {}){
         if (!this.props.withSections){
-            //刷新状态
-            if (this.state.isRefreshing){
-                if (datas == null){
-                    this.setIsRefreshing(false);
-                }else {
-                    //修改pageNo
-                    let pageNo = this.getPageNo() + 1;
-                    this.setPageNo(pageNo);
-                    //复制数据
-                    this.setDatas(datas)
-
-                    //刷新状态机
-                    this.setState({
-                        dataSource:this.state.dataSource.cloneWithRows(this.state.datas),
-                        isRefreshing:false
-                    })
-                }
-            }else {
-                // 加载
-                if (datas == null){
-                    this.setState({isLoadingMore:0})
-                }else {
-                    //修改pageNo
-                    let pageNo = this.getPageNo() + 1;
-                    this.setPageNo(pageNo);
-                    //复制数据
-                    this.setDatas(this.getDatas().concat(datas));
-                    this.setState({
-                        dataSource:this.state.dataSource.cloneWithRows(this.state.datas),
-                    })
-                }
-                let isLoadingMore = options["isLoadingMore"];
-                if (isLoadingMore != null && isLoadingMore == 2){
-                    this.setState({isLoadingMore:2})
-                }else {
-                    this.setState({isLoadingMore:0})
-                }
-            }
+            this.reloadPlainListView(datas,options,false);
         }else{
-            //刷新状态
-            if (this.state.isRefreshing){
-                if (datas == null){
-                    this.setIsRefreshing(false);
-                }else {
-                    //修改pageNo
-                    let pageNo = this.getPageNo() + 1;
-                    this.setPageNo(pageNo);
-                    //复制数据
-                    this.setDatas(datas)
+            let value = options['key'];
+            if (value != null) {
 
-                    //刷新状态机
-                    this.setState({
-                        dataSource:this.state.dataSource.cloneWithRowsAndSections(this.state.datas),
-                        isRefreshing:false
-                    })
+                let pageNo = this.getPageNo() - 1;
+
+                let sectionIds = [];
+                let rowIds = [];
+                let blobData = [];
+                for (let i = 0;i<datas.length;i++){
+                    sectionIds[i+pageNo] = i;
+                    blobData[i+pageNo] = datas[i];
+                    let tempArray = [];
+                    for (let j = 0; j<datas[i][value].length;j++){
+                        tempArray.push(j);
+                        let index = i + pageNo;
+                        blobData[index +":"+j] = datas[i][value][j];
+                    }
+                    rowIds.push(tempArray);
                 }
+
+                if (this.getIsRefreshing()){
+                    this.setRowIds(rowIds);
+                    this.setSectionIds(sectionIds);
+                    this.setDatas(blobData);
+                }else {
+                    this.setRowIds(this.getRowIds().concat(rowIds));
+                    this.setDatas(this.getDatas().concat(blobData));
+                }
+
+                //刷新状态机
+                this.setState({
+                    dataSource:this.state.dataSource.cloneWithRowsAndSections(this.getDatas(),this.getSectionIds(),this.getRowIds()),
+                })
+                this.reloadPlainListView(datas,options,true);
+
             }else {
-                // 加载
-                if (datas == null){
-                    this.setState({isLoadingMore:0})
-                }else {
-                    //修改pageNo
-                    let pageNo = this.getPageNo() + 1;
-                    this.setPageNo(pageNo);
-                    //复制数据
-                    this.setDatas(this.getDatas().concat(datas));
-                    this.setState({
-                        dataSource:this.state.dataSource.cloneWithRowsAndSections(this.state.datas),
-                    })
-                }
-                let isLoadingMore = options["isLoadingMore"];
-                if (isLoadingMore != null && isLoadingMore == 2){
-                    this.setState({isLoadingMore:2})
-                }else {
-                    this.setState({isLoadingMore:0})
-                }
+                console.log("分组传一个key");
             }
         }
+    }
 
+    reloadPlainListView(datas=[],options,withSections){
+        //刷新状态
+        if (this.getIsRefreshing()){
+            //修改pageNo
+            let pageNo = this.getPageNo() + 1;
+            this.setPageNo(pageNo);
+            this.setIsRefreshing(false);
+            this.reloadFooter(options);
+            if (datas != null || datas != undefined) {
+                //刷新状态机
+                if (!withSections) {
+                    //复制数据
+                    this.setDatas(datas)
+                    this.setState({
+                        dataSource: this.state.dataSource.cloneWithRows(this.getDatas()),
+                    })
+                } else {
+                    //分组的
+                }
+            }else{
+                // 处理null
+                this.setState({isLoadingMore:-1})
+            }
+        }else {
+            // 加载
+
+            let pageNo = this.getPageNo() + 1;
+            this.setPageNo(pageNo);
+            this.reloadFooter(options);
+
+            if (datas != null || datas != undefined){
+                //刷新状态机
+                if (!withSections) {
+                    //复制数据
+                    this.setDatas(this.getDatas().concat(datas));
+                    this.setState({
+                        dataSource: this.state.dataSource.cloneWithRows(this.getDatas()),
+                    })
+                } else {
+                    //分组
+                }
+            }else {
+                //null
+            }
+        }
+    }
+    reloadFooter(options){
+        let isLoadingMore = options["isLoadingMore"];
+        if (isLoadingMore != null && isLoadingMore == 2){
+            this.setState({isLoadingMore:2})
+        }else {
+            this.setState({isLoadingMore:0})
+        }
     }
     renderFooter() {
         if (this.props.enableFooter) {
@@ -167,6 +196,8 @@ export default class MyListView extends Component {
                     loadMoreText = "正在加载中...";
                 } else if (this.state.isLoadingMore === 2) {
                     loadMoreText = "已全部加载";
+                }else {
+                    loadMoreText = "";
                 }
             }
             return (

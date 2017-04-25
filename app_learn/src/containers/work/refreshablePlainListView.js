@@ -14,7 +14,7 @@ import SheetDetailContainer from './sheetDetailContainer'
 import HttpTool from './../../common/HttpTool'
 import * as Constants from  './../../common/constant'
 import LoadMoreFooter from  './../../component/LoadMoreFooter'
-import MyListView from './myListView'
+import MyListView from './MyListView'
 
 class RefreshablePlainListView extends Component {
     constructor(props) {
@@ -34,7 +34,6 @@ class RefreshablePlainListView extends Component {
                 }
 
             }).catch(function (error) {
-                console.log(error);
                 callback(null)
         });
     }
