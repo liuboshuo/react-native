@@ -7,12 +7,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "native-base": "^2.1.2",
     "react": "16.0.0-alpha.6",
     "react-native": "0.43.4",
-    "react-native-gifted-listview": "0.0.15",
-    "react-native-gifted-spinner": "^0.1.0",
-    "react-native-pull": "^2.0.2",
-    "react-native-tab-navigator": "^0.3.3"
+    "react-native-image-crop-picker": "^0.13.0",
+    "react-native-tab-navigator": "^0.3.3",
+    "react-native-uploader": "0.0.10",
+    "react-native-video": "^1.0.0"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",

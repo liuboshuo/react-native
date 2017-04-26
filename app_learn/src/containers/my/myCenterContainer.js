@@ -14,7 +14,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import NavigationBar from './../../common/NavBarCommon'
-
+import {Container,Button} from  'native-base'
 class MyCenterContainer extends Component {
     constructor(props) {
         super(props);
@@ -22,10 +22,12 @@ class MyCenterContainer extends Component {
 
     render() {
         return (
-            <View>
+            <Container>
                 <NavigationBar title="我的"/>
-
-            </View>
+                <Button>
+                    <Text>测试</Text>
+                </Button>
+            </Container>
         )
     }
 }

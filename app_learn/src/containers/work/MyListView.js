@@ -42,6 +42,7 @@ export default class MyListView extends Component {
         this.setPageNo(1)
         this.setDatas([]);
         this.setIsRefreshing(true);
+        this.setSectionIds([]);
     }
     static defaultProps = {
         enableFooter:true,
@@ -93,33 +94,27 @@ export default class MyListView extends Component {
         }else{
             let value = options['key'];
             if (value != null) {
+                let pageNo = 0;
+                if(this.getIsRefreshing()){
+                    this.setSectionIds([]);
+                    this.setRowIds([]);
+                    this.setDatas([]);
+                    pageNo = 0;
+                }else {
+                    pageNo = this.getSectionIds().length;
+                }
 
-                let pageNo = this.getPageNo() - 1;
-
-                let sectionIds = [];
-                let rowIds = [];
-                let blobData = [];
                 for (let i = 0;i<datas.length;i++){
-                    sectionIds[i+pageNo] = i;
-                    blobData[i+pageNo] = datas[i];
+                    let index = i + pageNo;
+                    this.getSectionIds()[index] = index;
+                    this.getDatas()[index] = datas[i];
                     let tempArray = [];
                     for (let j = 0; j<datas[i][value].length;j++){
                         tempArray.push(j);
-                        let index = i + pageNo;
-                        blobData[index +":"+j] = datas[i][value][j];
+                        this.getDatas()[index +":"+j] = datas[i][value][j];
                     }
-                    rowIds.push(tempArray);
+                    this.getRowIds().push(tempArray);
                 }
-
-                if (this.getIsRefreshing()){
-                    this.setRowIds(rowIds);
-                    this.setSectionIds(sectionIds);
-                    this.setDatas(blobData);
-                }else {
-                    this.setRowIds(this.getRowIds().concat(rowIds));
-                    this.setDatas(this.getDatas().concat(blobData));
-                }
-
                 //刷新状态机
                 this.setState({
                     dataSource:this.state.dataSource.cloneWithRowsAndSections(this.getDatas(),this.getSectionIds(),this.getRowIds()),
@@ -127,11 +122,18 @@ export default class MyListView extends Component {
                 this.reloadPlainListView(datas,options,true);
 
             }else {
-                console.log("分组传一个key");
+                if (datas.length > 0){
+                    let data = datas[0];
+                    if (typeof data === 'object'){
+                        console.log("分组传一个key");
+                    }else if(typeof data == 'array'){
+                        // to do list
+                    }
+                }
+                this.reloadPlainListView(datas,options,true);
             }
         }
     }
-
     reloadPlainListView(datas=[],options,withSections){
         //刷新状态
         if (this.getIsRefreshing()){

@@ -24,8 +24,14 @@ export default class RefreshableGroupListView extends Component {
     }
 
     loadData(pageNo,callback,option){
+        console.log(pageNo);
         setTimeout(function () {
-            callback(allCars,{'key':'cars'});
+            if (pageNo == 3){
+                callback(allCars,{'key':'cars',isLoadingMore:2});
+            }else {
+                callback(allCars,{'key':'cars'});
+            }
+
         },1000);
 
     }
@@ -36,8 +42,7 @@ export default class RefreshableGroupListView extends Component {
             </View>
         );
     }
-    renderRow0(data,sectionID,rowID,highlightRow){
-        console.log(data);
+    renderRow0(data){
         return (
             <TouchableOpacity onPress={()=>this.clickRow(data)}>
 
