@@ -10,7 +10,8 @@ import SheetContainer from './work/sheetContainer'
 import MyCenterContainer from './my/myCenterContainer'
 import RefreshablePlainListView from './work/refreshablePlainListView'
 import RefreshableGroupListView from './work/refreshableGroupListView'
-import ListView04 from './work/ListView04'
+import ImagePickerDemo from './work/ImagePickerDemo'
+import ImageSinglePickerDemo from './work/imageSinglePickerDemo'
 
 export default class App extends Component {
 
@@ -31,7 +32,7 @@ export default class App extends Component {
                 //{/*renderSelectedIcon={() => <Image source={{uri:selectIconName}} style={styles.tabIconStyle}/>}*/}
                 onPress={() => this.setState({ selectTabItemName: "tab1" })}
                 selectedTitleStyle={styles.selecttitleStyle}>
-                <RefreshableGroupListView {...this.props}/>
+                <ImageSinglePickerDemo {...this.props}/>
             </TabNavigator.Item>
 
             <TabNavigator.Item
