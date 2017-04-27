@@ -36,7 +36,7 @@ export default class App extends Component {
                 //{/*renderSelectedIcon={() => <Image source={{uri:selectIconName}} style={styles.tabIconStyle}/>}*/}
                 onPress={() => this.setState({ selectTabItemName: "tab1" })}
                 selectedTitleStyle={styles.selecttitleStyle}>
-                <ActionSheetDemo {...this.props}/>
+                <ImageSinglePickerDemo {...this.props}/>
             </TabNavigator.Item>
 
             <TabNavigator.Item

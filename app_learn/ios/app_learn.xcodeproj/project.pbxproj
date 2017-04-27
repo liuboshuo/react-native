@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -71,6 +70,7 @@
 		F5D0214441DB41218EC13AF0 /* SF-UI-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 37C3CB244C804E33AC54B04B /* SF-UI-Text-Regular.otf */; };
 		F6BCAA571B0A447F89FB2AFB /* Andale Mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C73BBE356B9D44699E9059D9 /* Andale Mono.ttf */; };
 		FD1F677C6F4F44429BFC623E /* Arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38213125DEC7436983B7F49D /* Arial.ttf */; };
+		CB369079837E4921B832B261 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AB05C687BAC42D698824FE2 /* SimpleLineIcons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -340,6 +340,7 @@
 		F6F9DA3E29254FB986C4085F /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
 		FA0F0D87175F497BB3970FF6 /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; };
 		FDDEEB6ACDAB44C9A386BB2C /* Rubik-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Bold.ttf"; path = "../node_modules/native-base/Fonts/Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		2AB05C687BAC42D698824FE2 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -556,6 +557,7 @@
 				D401AD2C20474C89B4330179 /* Skia.ttf */,
 				DDBDCDDBB63A4C9F8A7F4F95 /* Times New Roman.ttf */,
 				CD856F4E21AD4AF2820209FF /* Zocial.ttf */,
+				2AB05C687BAC42D698824FE2 /* SimpleLineIcons.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1029,6 +1031,7 @@
 				7830CF65120C4C44866204B4 /* Skia.ttf in Resources */,
 				6FCA0E55730548EA946CCCFC /* Times New Roman.ttf in Resources */,
 				F59EC44AF6EB4433A48C91E0 /* Zocial.ttf in Resources */,
+				CB369079837E4921B832B261 /* SimpleLineIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
