@@ -1,9 +1,6 @@
 /**
  * Created by liushuo on 17/4/19.
  */
-/**
- * Created by liushuo on 17/4/19.
- */
 import React, { Component } from 'react';
 import {
     View,

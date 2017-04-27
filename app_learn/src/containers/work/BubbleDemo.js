@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 import NavigationBar from './../../common/NavBarCommon'
 
-
 export default class BubbleDemo extends Component {
     render() {
         return (

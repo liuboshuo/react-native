@@ -21,7 +21,7 @@ class MyCenterContainer extends Component {
     render() {
         return (
             <Container>
-                <NavigationBar title="我的"/>
+                <NavigationBar title=""/>
                 <Button>
                     <Text>测试</Text>
                 </Button>
