@@ -12,7 +12,11 @@ import RefreshablePlainListView from './work/refreshablePlainListView'
 import RefreshableGroupListView from './work/refreshableGroupListView'
 import ImagePickerDemo from './work/ImagePickerDemo'
 import ImageSinglePickerDemo from './work/imageSinglePickerDemo'
-
+import BubbleDemo from './work/BubbleDemo'
+import SwiperDemo from './work/SwiperDemo'
+import LoadingImage from './work/LoadingImage'
+import ScrollableTabViewDemo from './work/ScrollableTabView'
+import ActionSheetDemo from './ActionSheetDemo'
 export default class App extends Component {
 
     constructor(props) {
@@ -32,7 +36,7 @@ export default class App extends Component {
                 //{/*renderSelectedIcon={() => <Image source={{uri:selectIconName}} style={styles.tabIconStyle}/>}*/}
                 onPress={() => this.setState({ selectTabItemName: "tab1" })}
                 selectedTitleStyle={styles.selecttitleStyle}>
-                <ImageSinglePickerDemo {...this.props}/>
+                <ActionSheetDemo {...this.props}/>
             </TabNavigator.Item>
 
             <TabNavigator.Item

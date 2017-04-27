@@ -12,7 +12,6 @@
 		00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302C01ABCB91800DB3ED1 /* libRCTImage.a */; };
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
-		00E356F31AD99517003FC87E /* app_learnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* app_learnTests.m */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		137F2D2D65B947BB88D29D80 /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6F9DA3E29254FB986C4085F /* rubicon-icon-font.ttf */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
@@ -21,7 +20,6 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		15F61F42C23B4217B10FF456 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DB8F005194C8E821C6586 /* Rubik-BoldItalic.ttf */; };
 		18BB6EB627164ED9B231562F /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB952F9151CB4EC9AC8F9EBF /* Rubik-BlackItalic.ttf */; };
@@ -43,7 +41,6 @@
 		4397DD6E0C374073947E6643 /* Courier New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBE9F433F2584817863959E8 /* Courier New.ttf */; };
 		443D1AA5B0C849FE88BA498C /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 879AFA3688584B87806B42D6 /* EvilIcons.ttf */; };
 		453DE782BA104714AFC98C5C /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 842750EB0173468586B968CC /* Foundation.ttf */; };
-		45EF3EB4BB6A4346AAE7EFB7 /* libimageCropPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38068D48CC6D484C82B28FCE /* libimageCropPicker.a */; };
 		50C0924AFBA543B383ECFA80 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E8EB481080244D687701482 /* Roboto.ttf */; };
 		577F08C71C114A89A4A92594 /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA0F0D87175F497BB3970FF6 /* Roboto_medium.ttf */; };
 		5799DE132C36433F95620865 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3B55A1CC97C4AF992799417 /* Rubik-Medium.ttf */; };
@@ -57,17 +54,18 @@
 		727600B252534670910D37C2 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4578C8C90E29458FB7889012 /* Rubik-Regular.ttf */; };
 		7631F9DCAC364AD2AAB3B2E8 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDDEEB6ACDAB44C9A386BB2C /* Rubik-Bold.ttf */; };
 		7830CF65120C4C44866204B4 /* Skia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D401AD2C20474C89B4330179 /* Skia.ttf */; };
-		7E914AF87872439CBA954724 /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F39BEC0F646F4C849CC4D930 /* libRCTVideo.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8346E108C9134CEDBA0A39AA /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A09901642EA4F51ABB2C699 /* MaterialIcons.ttf */; };
 		84D947956B8B41C2882E0B7A /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A3B233EFA9A42FBBC1F45D5 /* Rubik-LightItalic.ttf */; };
+		88F256FF1EB1897A00615BEC /* libimageCropPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37AD0C011EB0BCEE0023D968 /* libimageCropPicker.a */; };
+		88F257001EB1897F00615BEC /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 370A62BD1EB0E60000E5B232 /* libRCTVideo.a */; };
+		88F257011EB1898400615BEC /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 370A62881EB0E27200E5B232 /* libRNImagePicker.a */; };
 		8FD320377D1D4495A9DD0552 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D42618666FE2440B9BC803EE /* Entypo.ttf */; };
 		8FD6D8B07B474F41A1778C9E /* Arial Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B033CFCB4C64EE1AA7B78C7 /* Arial Black.ttf */; };
 		942852F358F848F0AAAE98AE /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4859C5E2989B482DA68688D9 /* FontAwesome.ttf */; };
 		CD53A58768FD4F66846D0EB1 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3076989692434E1380AA308F /* Octicons.ttf */; };
 		CE2891E12D11467CAFE94CB9 /* SanFranciscoThin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B86892C910B4495A58F4032 /* SanFranciscoThin.ttf */; };
 		D2854646141747D0B750577A /* SanFrancisco.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FAC25BCCB194032AC158773 /* SanFrancisco.ttf */; };
-		E1C1DAAD2E644EABA1C17FAC /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F11B18B9A82C47E6A9933A8F /* libRNImagePicker.a */; };
 		E8A0C034D1D84C238E7703C0 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47A55366DAFA4C589F9DB8EE /* Rubik-Light.ttf */; };
 		F59EC44AF6EB4433A48C91E0 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD856F4E21AD4AF2820209FF /* Zocial.ttf */; };
 		F5D0214441DB41218EC13AF0 /* SF-UI-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 37C3CB244C804E33AC54B04B /* SF-UI-Text-Regular.otf */; };
@@ -110,13 +108,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 832C81801AAF6DEF007FA2F7;
 			remoteInfo = RCTVibration;
-		};
-		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = app_learn;
 		};
 		139105C01AF99BAD00B5F7CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -295,7 +286,6 @@
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
 		00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTNetwork.xcodeproj; path = "../node_modules/react-native/Libraries/Network/RCTNetwork.xcodeproj"; sourceTree = "<group>"; };
 		00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVibration.xcodeproj; path = "../node_modules/react-native/Libraries/Vibration/RCTVibration.xcodeproj"; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* app_learnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = app_learnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* app_learnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = app_learnTests.m; sourceTree = "<group>"; };
 		0497B0A3E83C433089BF3732 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Italic.ttf"; path = "../node_modules/native-base/Fonts/Rubik-Italic.ttf"; sourceTree = "<group>"; };
@@ -317,7 +307,6 @@
 		2D02E4901E0B4A5D006451C7 /* app_learn-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "app_learn-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3076989692434E1380AA308F /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/native-base/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		37C3CB244C804E33AC54B04B /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-UI-Text-Regular.otf"; path = "../node_modules/native-base/Fonts/SF-UI-Text-Regular.otf"; sourceTree = "<group>"; };
-		38068D48CC6D484C82B28FCE /* libimageCropPicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libimageCropPicker.a; sourceTree = "<group>"; };
 		38213125DEC7436983B7F49D /* Arial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Arial.ttf; path = "../node_modules/native-base/Fonts/Arial.ttf"; sourceTree = "<group>"; };
 		3D6DB8F005194C8E821C6586 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-BoldItalic.ttf"; path = "../node_modules/native-base/Fonts/Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
 		4041209CEEC44BFEB654737A /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTVideo.xcodeproj; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; };
@@ -347,8 +336,6 @@
 		DDBDCDDBB63A4C9F8A7F4F95 /* Times New Roman.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Times New Roman.ttf"; path = "../node_modules/native-base/Fonts/Times New Roman.ttf"; sourceTree = "<group>"; };
 		EB952F9151CB4EC9AC8F9EBF /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-BlackItalic.ttf"; path = "../node_modules/native-base/Fonts/Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
 		EBE9F433F2584817863959E8 /* Courier New.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Courier New.ttf"; path = "../node_modules/native-base/Fonts/Courier New.ttf"; sourceTree = "<group>"; };
-		F11B18B9A82C47E6A9933A8F /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
-		F39BEC0F646F4C849CC4D930 /* libRCTVideo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTVideo.a; sourceTree = "<group>"; };
 		F3B55A1CC97C4AF992799417 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Medium.ttf"; path = "../node_modules/native-base/Fonts/Rubik-Medium.ttf"; sourceTree = "<group>"; };
 		F6F9DA3E29254FB986C4085F /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
 		FA0F0D87175F497BB3970FF6 /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; };
@@ -356,18 +343,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		00E356EB1AD99517003FC87E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88F257011EB1898400615BEC /* libRNImagePicker.a in Frameworks */,
+				88F257001EB1897F00615BEC /* libRCTVideo.a in Frameworks */,
+				88F256FF1EB1897A00615BEC /* libimageCropPicker.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -379,9 +361,6 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				45EF3EB4BB6A4346AAE7EFB7 /* libimageCropPicker.a in Frameworks */,
-				E1C1DAAD2E644EABA1C17FAC /* libRNImagePicker.a in Frameworks */,
-				7E914AF87872439CBA954724 /* libRCTVideo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,7 +625,6 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* app_learn.app */,
-				00E356EE1AD99517003FC87E /* app_learnTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* app_learn-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* app_learn-tvOSTests.xctest */,
 			);
@@ -656,24 +634,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* app_learnTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "app_learnTests" */;
-			buildPhases = (
-				00E356EA1AD99517003FC87E /* Sources */,
-				00E356EB1AD99517003FC87E /* Frameworks */,
-				00E356EC1AD99517003FC87E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				00E356F51AD99517003FC87E /* PBXTargetDependency */,
-			);
-			name = app_learnTests;
-			productName = app_learnTests;
-			productReference = 00E356EE1AD99517003FC87E /* app_learnTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		13B07F861A680F5B00A75B9A /* app_learn */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "app_learn" */;
@@ -737,10 +697,6 @@
 				LastUpgradeCheck = 610;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
-					00E356ED1AD99517003FC87E = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 13B07F861A680F5B00A75B9A;
-					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = WD5EQTR7NX;
 					};
@@ -827,7 +783,6 @@
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* app_learn */,
-				00E356ED1AD99517003FC87E /* app_learnTests */,
 				2D02E47A1E0B4A5D006451C7 /* app_learn-tvOS */,
 				2D02E48F1E0B4A5D006451C7 /* app_learn-tvOSTests */,
 			);
@@ -1034,13 +989,6 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		00E356EC1AD99517003FC87E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13B07F8E1A680F5B00A75B9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1133,14 +1081,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		00E356EA1AD99517003FC87E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				00E356F31AD99517003FC87E /* app_learnTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13B07F871A680F5B00A75B9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1170,11 +1110,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* app_learn */;
-			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
-		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2D02E47A1E0B4A5D006451C7 /* app_learn-tvOS */;
@@ -1195,67 +1130,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		00E356F61AD99517003FC87E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
-					"$(SRCROOT)/../node_modules/react-native-video/ios",
-				);
-				INFOPLIST_FILE = app_learnTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/app_learn.app/app_learn";
-			};
-			name = Debug;
-		};
-		00E356F71AD99517003FC87E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COPY_PHASE_STRIP = NO;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
-					"$(SRCROOT)/../node_modules/react-native-video/ios",
-				);
-				INFOPLIST_FILE = app_learnTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/app_learn.app/app_learn";
-			};
-			name = Release;
-		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1514,15 +1388,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "app_learnTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				00E356F61AD99517003FC87E /* Debug */,
-				00E356F71AD99517003FC87E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "app_learn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

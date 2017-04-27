@@ -1,9 +1,6 @@
 /**
  * Created by liushuo on 17/4/19.
  */
-/**
- * Created by liushuo on 17/4/19.
- */
 import React, { Component } from 'react';
 import {
     View,
@@ -15,6 +12,7 @@ import {
 } from 'react-native';
 import NavigationBar from './../../common/NavBarCommon'
 import {Container,Button} from  'native-base'
+
 class MyCenterContainer extends Component {
     constructor(props) {
         super(props);
@@ -27,6 +25,7 @@ class MyCenterContainer extends Component {
                 <Button>
                     <Text>测试</Text>
                 </Button>
+                <Text>Hello world</Text>
             </Container>
         )
     }

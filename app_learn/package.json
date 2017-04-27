@@ -10,8 +10,11 @@
     "native-base": "^2.1.2",
     "react": "16.0.0-alpha.6",
     "react-native": "0.43.4",
+    "react-native-actionsheet": "^2.1.0",
     "react-native-image-crop-picker": "^0.13.0",
     "react-native-image-picker": "^0.26.3",
+    "react-native-scrollable-tab-view": "^0.6.5",
+    "react-native-swiper": "^1.5.4",
     "react-native-tab-navigator": "^0.3.3",
     "react-native-video": "^1.0.0"
   },
