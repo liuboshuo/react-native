@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 
-const commonStyles = StyleSheet.create({
+const CommonStyles = StyleSheet.create({
 
     tabBarIconStyle:{
         width:30,

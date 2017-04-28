@@ -10,7 +10,7 @@ import {
     Platform,
     TouchableOpacity
 } from 'react-native';
-import NavigationBar from './../../common/NavBarCommon'
+import NavigationBar from '../../component/navBarCommon'
 
 class MsgListContainer extends Component {
     constructor(props) {

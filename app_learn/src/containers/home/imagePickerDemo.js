@@ -4,8 +4,9 @@ import {
   Image, TouchableOpacity, NativeModules, Dimensions
 } from 'react-native';
 
-import NavigationBar from './../../common/NavBarCommon'
+import NavigationBar from '../../component/navBarCommon'
 import {Container,Button} from  'native-base'
+import * as Constants from  './../../constants/constant'
 import Video from 'react-native-video';
 
 var ImagePicker = NativeModules.ImageCropPicker;
@@ -91,7 +92,8 @@ export default class ImagePickerDemo extends Component {
   }
 
   renderImage(image) {
-    return <Image style={{width: 300, height: 300, resizeMode: 'contain'}} source={image} />
+    let height =  Constants.screenWidth * image.height / image.width;
+    return <Image style={{width: Constants.screenWidth, height: height, resizeMode: 'contain'}} source={image} />
   }
 
   renderAsset(image) {
@@ -106,14 +108,18 @@ export default class ImagePickerDemo extends Component {
     return (
         <Container>
             <NavigationBar title=""/>
-            <ScrollView style={styles.scrollView}>
-              {this.state.image ? this.renderAsset(this.state.image) : null}
-              {this.state.images ? this.state.images.map(i => <View key={i.uri}>{this.renderAsset(i)}</View>) : null}
-            </ScrollView>
+            <View style={styles.scrollView}>
+                <ScrollView>
+                    {this.state.image ? this.renderAsset(this.state.image) : null}
+                    {this.state.images ? this.state.images.map(i => <View key={i.uri}>{this.renderAsset(i)}</View>) : null}
+                </ScrollView>
+            </View>
+            <View style={styles.view}>
+                <Button onPress={()=>this.pickSingle(false)} ><Text>选择单张</Text></Button>
+                <Button onPress={this.pickMultiple.bind(this)} ><Text>选择多张</Text></Button>
+                <Button onPress={()=>this.pickSingleWithCamera(false)} ><Text>进行拍照</Text></Button>
+            </View>
 
-            <Button onPress={()=>this.pickSingle(false)} ><Text>选择单张</Text></Button>
-            <Button onPress={this.pickMultiple.bind(this)} ><Text>选择多张</Text></Button>
-            <Button onPress={()=>this.pickSingleWithCamera(false)} ><Text>进行拍照</Text></Button>
         </Container>
     );
   }
@@ -122,6 +128,10 @@ export default class ImagePickerDemo extends Component {
 
 const styles = StyleSheet.create({
     scrollView:{
-      backgroundColor:'red'
+        backgroundColor:'red',
+        height:300
+    },
+    view:{
+        flexDirection:'row'
     }
 });

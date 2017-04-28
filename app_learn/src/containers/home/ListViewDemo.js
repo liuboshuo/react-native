@@ -13,11 +13,12 @@ import {
     Platform,
     TouchableOpacity
 } from 'react-native';
-import NavigationBar from './../../common/NavBarCommon'
-import SheetDetailContainer from './sheetDetailContainer'
-import HttpTool from './../../common/HttpTool'
-import * as Constants from  './../../common/constant'
-import LoadMoreFooter from  './../../component/LoadMoreFooter'
+import NavigationBar from '../../component/navBarCommon'
+import SheetDetailContainer from './test'
+import HttpTool from '../../common/httpTool'
+import * as Constants from  '../../constants/constant'
+import LoadMoreFooter from  '../../component/loadMoreFooter'
+import NewWorkImage from  './../../component/newWorkImage'
 
 const pageSize = 45;
 
@@ -58,7 +59,7 @@ class SheetContainer extends Component {
         return (
             <TouchableOpacity onPress={()=>this.gotodetail(data)}>
                 <View style={styles.viewStyle}>
-                    <Image source={{uri: "https:" + imagePath}} style={styles.cellImage}/>
+                    <NewWorkImage uri={"https:" + imagePath} width={60} height={50} placeholder={{uri:require("./../../source/images/placeholder_icon.png")}}/>
                     <View style={styles.textView}>
                         <Text>
                             {productName}

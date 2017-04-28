@@ -7,7 +7,7 @@ import {
     Image, TouchableOpacity, NativeModules, Dimensions
 } from 'react-native';
 
-import NavigationBar from './../../common/NavBarCommon'
+import NavigationBar from '../../component/navBarCommon'
 import ScrollableTabView, {ScrollableTabBar,DefaultTabBar} from 'react-native-scrollable-tab-view'
 import {Container,Button,Toast} from  'native-base'
 

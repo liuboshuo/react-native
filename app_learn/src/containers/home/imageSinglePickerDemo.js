@@ -7,7 +7,7 @@ import {
     Image, TouchableOpacity, NativeModules, Dimensions
 } from 'react-native';
 
-import NavigationBar from './../../common/NavBarCommon'
+import NavigationBar from '../../component/navBarCommon'
 import {Container,Button} from  'native-base'
 import ImagePicker from 'react-native-image-picker'
 

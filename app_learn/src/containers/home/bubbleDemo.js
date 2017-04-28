@@ -6,7 +6,7 @@ import {
     View, Text, StyleSheet, ScrollView, Alert,
     Image, TouchableOpacity, NativeModules, Dimensions
 } from 'react-native';
-import NavigationBar from './../../common/NavBarCommon'
+import NavigationBar from '../../component/navBarCommon'
 
 export default class BubbleDemo extends Component {
     render() {

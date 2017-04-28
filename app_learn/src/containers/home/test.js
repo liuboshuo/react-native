@@ -11,9 +11,9 @@ import {
     Platform,
     TouchableOpacity
 } from 'react-native';
-import NavigationBar from './../../common/NavBarCommon'
+import NavigationBar from '../../component/navBarCommon'
 import back from './../../source/images/icon_back.png'
-import * as Constants from  './../../common/constant'
+import * as Constants from  '../../constants/constant'
 
 class SheetDetailContainer extends Component {
     constructor(props) {

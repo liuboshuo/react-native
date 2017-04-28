@@ -2,9 +2,9 @@
  * Created by liushuo on 17/4/24.
  */
 import React , {Component} from 'react';
-import NavigationBar from './../../common/NavBarCommon'
+import NavigationBar from '../../component/navBarCommon'
 import { Dimensions , Text , View, StyleSheet,TouchableOpacity, Image} from 'react-native';
-import MyListView from './MyListView'
+import MyListView from '../../component/myListView'
 
 let screenWidth = Dimensions.get("window").width
 let width = 100;

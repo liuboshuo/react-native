@@ -9,12 +9,12 @@ import {
     StyleSheet,
     TouchableOpacity
 } from 'react-native';
-import NavigationBar from './../../common/NavBarCommon'
-import SheetDetailContainer from './sheetDetailContainer'
-import HttpTool from './../../common/HttpTool'
-import * as Constants from  './../../common/constant'
-import LoadMoreFooter from  './../../component/LoadMoreFooter'
-import MyListView from './MyListView'
+import NavigationBar from '../../component/navBarCommon'
+import SheetDetailContainer from './test'
+import HttpTool from '../../common/httpTool'
+import * as Constants from  '../../constants/constant'
+import LoadMoreFooter from  '../../component/loadMoreFooter'
+import MyListView from '../../component/myListView'
 
 class RefreshablePlainListView extends Component {
     constructor(props) {

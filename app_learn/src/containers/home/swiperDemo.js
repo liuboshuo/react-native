@@ -12,9 +12,9 @@ import {
     TouchableOpacity,
     Alert
 } from 'react-native';
-import NavigationBar from './../../common/NavBarCommon'
+import NavigationBar from '../../component/navBarCommon'
 import Swiper from 'react-native-swiper'
-import * as Constants from './../../common/constant'
+import * as Constants from '../../constants/constant'
 export default class SwiperDemo extends Component {
 
     constructor (props) {

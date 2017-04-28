@@ -10,7 +10,7 @@ import {
     ActivityIndicator,
 } from 'react-native';
 import ActionSheet from 'react-native-actionsheet'
-import NavigationBar from './../common/NavBarCommon'
+import NavigationBar from '../../component/navBarCommon'
 import {Container,Button,Toast} from  'native-base'
 
 let title = "action"
