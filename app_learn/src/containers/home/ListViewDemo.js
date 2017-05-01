@@ -19,6 +19,7 @@ import HttpTool from '../../common/httpTool'
 import * as Constants from  '../../constants/constant'
 import LoadMoreFooter from  '../../component/loadMoreFooter'
 import NewWorkImage from  './../../component/newWorkImage'
+import back from './../../source/images/icon_back.png'
 
 const pageSize = 45;
 
@@ -115,7 +116,7 @@ class SheetContainer extends Component {
         const {navigator} = this.props;
         return (
             <View style={styles.container}>
-                <NavigationBar title="工单" rightTitle="点击" rightAction={()=>{
+                <NavigationBar title="测试" leftImage={ back } leftAction={()=>this.props.navigator.pop()} rightTitle="点击" rightAction={()=>{
 
                     let pro = this.state.productNormalList[0]
                     pro.companyName = "测试";

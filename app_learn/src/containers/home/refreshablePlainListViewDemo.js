@@ -15,6 +15,7 @@ import HttpTool from '../../common/httpTool'
 import * as Constants from  '../../constants/constant'
 import LoadMoreFooter from  '../../component/loadMoreFooter'
 import MyListView from '../../component/myListView'
+import back from './../../source/images/icon_back.png'
 
 class RefreshablePlainListView extends Component {
     constructor(props) {
@@ -73,7 +74,7 @@ class RefreshablePlainListView extends Component {
         const {navigator} = this.props;
         return (
             <View style={styles.container}>
-                <NavigationBar title="工单"/>
+                <NavigationBar title="Plain ListView" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
                 <MyListView onFetch={this.loadData.bind(this)}
                             renderRow={(data)=>this.renderRow(data)}
                             renderFooter={ this.renderFooter.bind(this)}

@@ -11,8 +11,8 @@ import {
     TouchableOpacity
 } from 'react-native';
 import NavigationBar from '../../component/navBarCommon'
-import {Container,Button} from  'native-base'
-
+import {Container} from  'native-base'
+import * as Constants from './../../constants/constant'
 class MyCenterContainer extends Component {
     constructor(props) {
         super(props);
@@ -20,18 +20,19 @@ class MyCenterContainer extends Component {
 
     render() {
         return (
-            <Container>
+            <View style={styles.container}>
                 <NavigationBar title=""/>
-                <Button>
-                    <Text>测试</Text>
-                </Button>
-                <Text>Hello world</Text>
-            </Container>
+            </View>
         )
     }
 }
 
 const styles = StyleSheet.create({
+
+    container:{
+        flex:1,
+        backgroundColor:Constants.viewBgColor
+    }
 
 })
 

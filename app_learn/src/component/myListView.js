@@ -210,6 +210,7 @@ export default class MyListView extends Component {
     }
     render(){
         return(<ListView
+            style={this.props.style == null ? this.props.style : null}
             dataSource={this.state.dataSource}
             renderRow={this.props.renderRow.bind(this)}
             renderSectionHeader={this.props.withSections == false ? null : this.props.renderSectionHeader.bind(this)}

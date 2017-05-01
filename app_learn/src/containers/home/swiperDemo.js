@@ -15,6 +15,8 @@ import {
 import NavigationBar from '../../component/navBarCommon'
 import Swiper from 'react-native-swiper'
 import * as Constants from '../../constants/constant'
+import back from './../../source/images/icon_back.png'
+
 export default class SwiperDemo extends Component {
 
     constructor (props) {
@@ -43,18 +45,14 @@ export default class SwiperDemo extends Component {
 
     render() {
         return (
-            <View>
-                <NavigationBar title=""/>
-                 {/*View*/}
+            <View style={styles.container}>
+                <NavigationBar title="轮播图的测试" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
                 <Swiper height={120} autoplay>
                     <View style={styles.view1}>
-                        <Text style={styles.textStyle}>111</Text>
                     </View>
                     <View style={styles.view2}>
-                        <Text style={styles.textStyle}>222</Text>
                     </View>
                     <View style={styles.view3}>
-                        <Text style={styles.textStyle}>333</Text>
                     </View>
                 </Swiper>
                 <View style={{height:10}}></View>
@@ -107,6 +105,10 @@ export default class SwiperDemo extends Component {
     }
 }
 const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        backgroundColor:Constants.viewBgColor
+    },
     loadingView:{
         position: 'absolute',
         justifyContent: 'center',

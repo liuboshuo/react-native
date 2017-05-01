@@ -7,7 +7,7 @@ import {AppRegistry ,  Text , View, StyleSheet, Navigator, Dimensions, Image, Pl
 import TabNavigator from 'react-native-tab-navigator'
 import MsgListContainer from './msg/msgListContainer'
 import MyCenterContainer from './my/myCenterContainer'
-import SheetContainer from './home/ListViewDemo'
+import SheetContainer from './home/listViewDemo'
 import RefreshablePlainListView from './home/refreshablePlainListViewDemo'
 import RefreshableGroupListView from './home/refreshableGroupListViewDemo'
 import ImagePickerDemo from './home/imagePickerDemo'

@@ -5,6 +5,8 @@ import React , {Component} from 'react';
 import NavigationBar from '../../component/navBarCommon'
 import { Dimensions , Text , View, StyleSheet,TouchableOpacity, Image} from 'react-native';
 import MyListView from '../../component/myListView'
+import back from './../../source/images/icon_back.png'
+import * as Constants from './../../constants/constant'
 
 let screenWidth = Dimensions.get("window").width
 let width = 100;
@@ -56,8 +58,8 @@ export default class RefreshableGroupListView extends Component {
     }
     render() {
         return (
-            <View style={{flex:1}}>
-                <NavigationBar title="工单"/>
+            <View style={{flex:1, backgroundColor:Constants.viewBgColor}}>
+                <NavigationBar title="分组ListView" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
                 <MyListView
                     onFetch={this.loadData.bind(this)}
                     renderRow={(data,sectionID,rowID,highlightRow)=>{ return this.renderRow0(data,sectionID,rowID,highlightRow)}}
@@ -73,6 +75,7 @@ export default class RefreshableGroupListView extends Component {
 const  styles = StyleSheet.create({
 
     cellStyle:{
+        backgroundColor:'white',
         flexDirection:'row',
         alignItems:'center',
         borderBottomColor:"#e8e8e8",
@@ -82,7 +85,7 @@ const  styles = StyleSheet.create({
         width:screenWidth,
         height:30,
         justifyContent:'center',
-        backgroundColor:'#e8e8e8'
+        backgroundColor:'#eee'
     },
     fontTitle:{
         fontSize:15

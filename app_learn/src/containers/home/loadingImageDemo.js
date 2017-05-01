@@ -8,6 +8,8 @@ import {
 } from 'react-native';
 import NetWorkImage from '../../component/newWorkImage'
 import NavigationBar from '../../component/navBarCommon'
+import back from './../../source/images/icon_back.png'
+import * as Constants from '../../constants/constant'
 const {width} = Dimensions.get("window");
 export default class LoadingImage extends Component {
 
@@ -17,8 +19,8 @@ export default class LoadingImage extends Component {
 
     render() {
         return (
-            <View>
-                <NavigationBar title=""/>
+            <View style={styles.container}>
+                <NavigationBar title="网络图片加载显示占位图" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
                 <NetWorkImage uri={"http://cms-bucket.nosdn.127.net/2263228dc8e94e96bc64e467d210bf7220170427081659.jpeg"}
                               width={width}
                               height={120}
@@ -31,6 +33,10 @@ export default class LoadingImage extends Component {
 
 
 const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        backgroundColor:Constants.viewBgColor
+    },
     scrollView:{
         backgroundColor:'red'
     },

@@ -7,13 +7,25 @@ import {
     Text,
     Image,
     StyleSheet,
-    Platform,
     TouchableOpacity,
     ListView
 } from 'react-native';
 import NavigationBar from '../../component/navBarCommon'
 import * as Constants from  '../../constants/constant'
-
+import SheetContainer from './listViewDemo'
+import RefreshablePlainListView from './refreshablePlainListViewDemo'
+import RefreshableGroupListView from './refreshableGroupListViewDemo'
+import ParallaxViewDemo from './parallaxViewDemo'
+import CustomPickerDemo from './customPickerDemo'
+import BubbleDemo from './bubbleDemo'
+import ImagePickerDemo from './imagePickerDemo'
+import SwiperDemo from './swiperDemo'
+import LoadingImage from './loadingImageDemo'
+import ScrollableTabViewDemo from './scrollableTabViewDemo'
+import ActionSheetDemo from './actionSheetDemo'
+import ToastShowDemo from './toastShowDemo'
+import QRCodeDemo from './codeDemo'
+import LeftSlidePageDemo from './leftSlidePageDemo'
 class HomeContainers extends Component {
     constructor(props) {
         super(props);
@@ -25,17 +37,80 @@ class HomeContainers extends Component {
     initData(){
         return [
             {
-                title:"ListView上拉加载下拉刷新"
-            }
+                title:"ListView上拉加载下拉刷新",
+                component:SheetContainer
+            },
+            {
+                title:"ListView上拉加载下拉刷新(完善)",
+                component:RefreshablePlainListView
+            },
+            {
+                title:"ListView分组",
+                component:RefreshableGroupListView
+            },
+            {
+                title:'下拉图片放大',
+                component:ParallaxViewDemo
+            },
+            {
+                title:'picker组件',
+                component:CustomPickerDemo
+            },
+            {
+                title:'chat 聊天',
+                component:BubbleDemo
+            },
+            {
+                title:'图片选择',
+                component:ImagePickerDemo
+            },
+            {
+                title:'轮播图',
+                component:SwiperDemo
+            },
+            {
+                title:'网络图片加载显示占位图',
+                component:LoadingImage
+            },
+            {
+                title:"选项卡",
+                component:ScrollableTabViewDemo
+            },
+            {
+                title:"actionsheet",
+                component:ActionSheetDemo
+            },
+            {
+                title:"Toast",
+                component:ToastShowDemo
+            },
+            {
+                title:"生成二维码",
+                component:QRCodeDemo
+            },
+            {
+                title:"抽屉组件",
+                component:LeftSlidePageDemo
+            },
+
         ]
+    }
+    gotodetail(data){
+        const {navigator} = this.props;
+        navigator.push({
+            component: data.component,
+            params:{
+                data
+            }
+        })
     }
     row(data){
         return (
-            <TouchableOpacity style={styles.cellStyle} activeOpacity={0.5}>
+            <TouchableOpacity style={styles.cellStyle} activeOpacity={0.5} onPress={()=>this.gotodetail(data)}>
 
                 <View style={styles.view}>
                     <Text style={styles.textView}>{data.title}</Text>
-                    <Image />
+                    <Image source={ require('./../../source/images/go.png')} style={styles.imageStyle}/>
                 </View>
 
 
@@ -50,7 +125,7 @@ class HomeContainers extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <NavigationBar title=""/>
+                <NavigationBar title="demo"/>
                 <ListView dataSource={this.state.dataSource}
                     renderRow={this.row.bind(this)}
 
@@ -75,10 +150,17 @@ const styles = StyleSheet.create({
     },
     view:{
         flex:1,
-        justifyContent:'center'
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center'
     },
     textView:{
-        marginLeft:15
+        marginLeft:6
+    },
+    imageStyle:{
+        width:10,
+        height:10,
+        marginRight:5
     }
 });
 

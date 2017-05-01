@@ -44,9 +44,13 @@ class LeftSlidePageDemo extends Component {
                        menu={<MenuDemo style={{flex:1}} cellClick={this.cellClick}/>}
                        onChange={(isOpen)=>this.onItemChange(isOpen)}
             >
-                <NavigationBar title={this.state.item} leftTitle={"显示"} leftAction={()=>this.setState({isOpen:!this.state.isOpen})}/>
+                <NavigationBar title={this.state.item} leftImage={back} leftAction={()=>this.props.navigator.pop()}/>
 
-                <View style={styles.container}/>
+                <View style={styles.container}>
+                    <TouchableOpacity style={styles.buttonStyle} onPress={()=>this.setState({isOpen:!this.state.isOpen})}>
+                        <Text>显示</Text>
+                    </TouchableOpacity>
+                </View>
 
             </SlideMenu>
         )
@@ -57,6 +61,14 @@ const styles = StyleSheet.create({
     container:{
         backgroundColor:Constants.viewBgColor,
         flex:1
+    },
+    buttonStyle:{
+        height:40,
+        backgroundColor:'red',
+        justifyContent:'center',
+        alignItems:'center',
+        borderRadius:6,
+        margin:10
     }
 });
 
