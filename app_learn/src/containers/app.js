@@ -5,22 +5,12 @@
 import React , {Component} from 'react';
 import {AppRegistry ,  Text , View, StyleSheet, Navigator, Dimensions, Image, Platform} from 'react-native';
 import TabNavigator from 'react-native-tab-navigator'
-import MsgListContainer from './msg/msgListContainer'
-import MyCenterContainer from './my/myCenterContainer'
-import SheetContainer from './home/listViewDemo'
-import RefreshablePlainListView from './home/refreshablePlainListViewDemo'
-import RefreshableGroupListView from './home/refreshableGroupListViewDemo'
-import ImagePickerDemo from './home/imagePickerDemo'
-import ImageSinglePickerDemo from './home/imageSinglePickerDemo'
-import BubbleDemo from './home/bubbleDemo'
-import SwiperDemo from './home/swiperDemo'
-import LoadingImage from './home/loadingImageDemo'
-import ScrollableTabViewDemo from './home/scrollableTabViewDemo'
-import ActionSheetDemo from './home/actionSheetDemo'
-import ToastShowDemo from './home/toastShowDemo'
-import LeftSlidePageDemo from './home/leftSlidePageDemo'
-import QRCodeDemo from './home/codeDemo'
-import HomeContainers from './home/homeContainers'
+import MsgListContainer from './Tab2/tab2ListContainer'
+import MyCenterContainer from './Tab3/tab3CenterContainer'
+import HomeContainers from './Tab1/tab1Containers'
+
+
+
 export default class App extends Component {
 
     constructor(props) {

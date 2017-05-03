@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {
   View, Text, StyleSheet, ScrollView,
-  Image, NativeModules
+  Image, NativeModules, TouchableOpacity
 } from 'react-native';
 
 import NavigationBar from '../../component/navBarCommon'
@@ -139,12 +139,24 @@ export default class ImagePickerDemo extends Component {
     return (
         <View style={styles.container}>
             <NavigationBar title="图片选择器" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
-            {this.renderImages(this.state.images)}
-            <View style={styles.view}>
-                <Button onPress={()=>this.pickSingle(false)} ><Text>选择单张</Text></Button>
-                <Button onPress={this.pickMultiple.bind(this)} ><Text>选择多张</Text></Button>
-                <Button onPress={()=>this.pickSingleWithCamera(false)} ><Text>进行拍照</Text></Button>
-            </View>
+
+            <ScrollView style={styles.view}>
+
+                {this.renderImages(this.state.images)}
+
+                <TouchableOpacity style={styles.buttonStyle} activeOpacity={0.5} onPress={()=>this.pickSingle(false)}>
+                    <Text>选择单张</Text>
+                </TouchableOpacity>
+
+
+                <TouchableOpacity style={styles.buttonStyle} activeOpacity={0.5} onPress={this.pickMultiple.bind(this)}>
+                    <Text>选择多张</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.buttonStyle} activeOpacity={0.5} onPress={()=>this.pickSingleWithCamera(false)}>
+                    <Text>进行拍照</Text>
+                </TouchableOpacity>
+            </ScrollView>
 
         </View>
     );
@@ -160,7 +172,12 @@ const styles = StyleSheet.create({
     scrollView:{
         backgroundColor:'red',
     },
-    view:{
-        flexDirection:'row'
+    buttonStyle:{
+        height:40,
+        backgroundColor:'red',
+        justifyContent:'center',
+        alignItems:'center',
+        borderRadius:6,
+        margin:10
     }
 });

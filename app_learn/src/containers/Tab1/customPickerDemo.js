@@ -67,18 +67,47 @@ class CustomPickerDemo extends Component {
 
     picker3(){
 
-        let data = [];
-        for (let  i = 0 ; i<2; i++){
-            let data1 = [];
-            for (let k = 0 ; k<2; k ++){
-                let dataT = [];
-                for (let j=0;i<10;j++){
-                    dataT.push(j);
-                }
-                data1.push(dataT);
-            }
-            data.push(data1);
-        }
+        let data = [
+            {
+                a: [
+                    {
+                        a1: [1, 2, 3, 4]
+                    },
+                    {
+                        a2: [5, 6, 7, 8]
+                    },
+                    {
+                        a3: [9, 10, 11, 12]
+                    }
+                ]
+            },
+            {
+                b: [
+                    {
+                        b1: [11, 22, 33, 44]
+                    },
+                    {
+                        b2: [55, 66, 77, 88]
+                    },
+                    {
+                        b3: [99, 1010, 1111, 1212]
+                    }
+                ]
+            },
+            {
+                c: [
+                    {
+                        c1: ['a', 'b', 'c']
+                    },
+                    {
+                        c2: ['aa', 'bb', 'cc']
+                    },
+                    {
+                        c3: ['aaa', 'bbb', 'ccc']
+                    }
+                ]
+            },
+        ]
         Picker.init({
             pickerData:data,
             selectedValue:[0,0,0],
@@ -127,7 +156,6 @@ const styles = StyleSheet.create({
         flex:1
     },
     buttonStyle:{
-
         height:40,
         backgroundColor:'red',
         justifyContent:'center',

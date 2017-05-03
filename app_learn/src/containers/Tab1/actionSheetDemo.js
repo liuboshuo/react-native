@@ -8,6 +8,7 @@ import {
     View,
     Image,
     ActivityIndicator,
+    TouchableOpacity,
 } from 'react-native';
 import ActionSheet from 'react-native-actionsheet'
 import NavigationBar from '../../component/navBarCommon'
@@ -38,15 +39,30 @@ export default class ActionSheetDemo extends Component {
         return (
             <View style={{flex:1, backgroundColor:Constants.viewBgColor}}>
                 <NavigationBar title="actionsheet" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
-                <Text>{this.state.text}</Text>
-                <Button onPress={this.click.bind(this)}>
+                <View style={styles.textViewStyle}>
+                    <Text>{this.state.text}</Text>
+                </View>
+                <TouchableOpacity style={styles.buttonStyle} activeOpacity={0.5} onPress={this.click.bind(this)}>
                     <Text>press</Text>
-                </Button>
+                </TouchableOpacity>
                 <ActionSheet ref = {o => this.ActionSheet = o} title={title} options={options} cancelButtonIndex={cancleIndex} destructiveButtonIndex={DESTRUCTIVE_INDEX} onPress={(text)=>this.showText(text)}/>
             </View>
         );
     }
 }
 const styles = StyleSheet.create({
-
+    buttonStyle:{
+        height:40,
+        backgroundColor:'red',
+        justifyContent:'center',
+        alignItems:'center',
+        borderRadius:6,
+        margin:10
+    },
+    textViewStyle:{
+        height:40,
+        justifyContent:'center',
+        alignItems:'center',
+        margin:10
+    }
 })

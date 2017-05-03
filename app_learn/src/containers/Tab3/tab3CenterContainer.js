@@ -11,7 +11,6 @@ import {
     TouchableOpacity
 } from 'react-native';
 import NavigationBar from '../../component/navBarCommon'
-import {Container} from  'native-base'
 import * as Constants from './../../constants/constant'
 class MyCenterContainer extends Component {
     constructor(props) {
@@ -22,16 +21,23 @@ class MyCenterContainer extends Component {
         return (
             <View style={styles.container}>
                 <NavigationBar title=""/>
+                <View style={styles.content}>
+                    <Text>tab2</Text>
+                </View>
             </View>
         )
     }
 }
 
 const styles = StyleSheet.create({
-
     container:{
         flex:1,
-        backgroundColor:Constants.viewBgColor
+        backgroundColor:Constants.viewBgColor,
+    },
+    content:{
+        flex:1,
+        justifyContent:'center',
+        alignItems:'center'
     }
 
 })

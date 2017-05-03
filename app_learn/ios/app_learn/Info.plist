@@ -5,7 +5,7 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>chinese</string>
     <key>CFBundleDisplayName</key>
-    <string>app_learn</string>
+    <string>react测试</string>
     <key>CFBundleExecutable</key>
     <string>$(EXECUTABLE_NAME)</string>
     <key>CFBundleIdentifier</key>
@@ -26,6 +26,8 @@
     <true/>
     <key>NSAppTransportSecurity</key>
     <dict>
+      <key>NSAllowsArbitraryLoads</key>
+      <true/>
       <key>NSExceptionDomains</key>
       <dict>
         <key>localhost</key>
@@ -34,11 +36,13 @@
           <true/>
         </dict>
       </dict>
-      <key>NSAllowsArbitraryLoads</key>
-      <true/>
     </dict>
+    <key>NSCameraUsageDescription</key>
+    <string>需要访问相机</string>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string/>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>需要访问相册</string>
     <key>UIAppFonts</key>
     <array>
       <string>Andale Mono.ttf</string>
@@ -89,9 +93,5 @@
     </array>
     <key>UIViewControllerBasedStatusBarAppearance</key>
     <false/>
-    <key>NSCameraUsageDescription</key>
-    <string>需要访问相机</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>需要访问相册</string>
   </dict>
 </plist>

@@ -17,6 +17,7 @@ import RefreshablePlainListView from './refreshablePlainListViewDemo'
 import RefreshableGroupListView from './refreshableGroupListViewDemo'
 import ParallaxViewDemo from './parallaxViewDemo'
 import CustomPickerDemo from './customPickerDemo'
+import SwipeoutDemo from './swipeoutDemo'
 import BubbleDemo from './bubbleDemo'
 import ImagePickerDemo from './imagePickerDemo'
 import SwiperDemo from './swiperDemo'
@@ -26,6 +27,10 @@ import ActionSheetDemo from './actionSheetDemo'
 import ToastShowDemo from './toastShowDemo'
 import QRCodeDemo from './codeDemo'
 import LeftSlidePageDemo from './leftSlidePageDemo'
+import ParallaxScrollViewDemo from './parallaxScrollViewDemo'
+import GalleryDemo from './galleryDemo'
+import CkeckBoxDemo from './ckeckBox'
+import ImageLoadingDemo from './imageLoadingDemo'
 class HomeContainers extends Component {
     constructor(props) {
         super(props);
@@ -49,8 +54,8 @@ class HomeContainers extends Component {
                 component:RefreshableGroupListView
             },
             {
-                title:'下拉图片放大',
-                component:ParallaxViewDemo
+                title:"ListView 侧滑",
+                component:SwipeoutDemo
             },
             {
                 title:'picker组件',
@@ -73,6 +78,10 @@ class HomeContainers extends Component {
                 component:LoadingImage
             },
             {
+                title:'加载图片控件',
+                component:ImageLoadingDemo
+            },
+            {
                 title:"选项卡",
                 component:ScrollableTabViewDemo
             },
@@ -92,6 +101,21 @@ class HomeContainers extends Component {
                 title:"抽屉组件",
                 component:LeftSlidePageDemo
             },
+            {
+                title:'下拉图片放大',
+                component:ParallaxViewDemo
+            },
+            {
+                title:'导航栏渐变的下拉图片ListView',
+                component:ParallaxScrollViewDemo
+            },
+            {
+                title:'照片浏览',
+                component:GalleryDemo
+            },
+            {
+                title:'checkbox',
+                component:CkeckBoxDemo}
 
         ]
     }
