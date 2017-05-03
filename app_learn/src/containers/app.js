@@ -25,7 +25,7 @@ export default class App extends Component {
 
             <TabNavigator.Item
                 selected={this.state.selectTabItemName === "tab1"}
-                title={"Tab1"}
+                title={"首页"}
                 //{/*renderIcon={() => <Image source={{uri:normalIconName}} style={styles.tabIconStyle}/>}*/}
                 //{/*renderSelectedIcon={() => <Image source={{uri:selectIconName}} style={styles.tabIconStyle}/>}*/}
                 onPress={() => this.setState({ selectTabItemName: "tab1" })}
@@ -35,7 +35,7 @@ export default class App extends Component {
 
             <TabNavigator.Item
                 selected={this.state.selectTabItemName === "tab2"}
-                title={"Tab2"}
+                title={"tab2"}
                 //{/*renderIcon={() => <Image source={{uri:normalIconName}} style={styles.tabIconStyle}/>}*/}
                 //{/*renderSelectedIcon={() => <Image source={{uri:selectIconName}} style={styles.tabIconStyle}/>}*/}
                 onPress={() => this.setState({ selectTabItemName: "tab2" })}
@@ -45,7 +45,7 @@ export default class App extends Component {
 
             <TabNavigator.Item
                 selected={this.state.selectTabItemName === "tab3"}
-                title={"Tab3"}
+                title={"tab3"}
                 //{/*renderIcon={() => <Image source={{uri:normalIconName}} style={styles.tabIconStyle}/>}*/}
                 //{/*renderSelectedIcon={() => <Image source={{uri:selectIconName}} style={styles.tabIconStyle}/>}*/}
                 onPress={() => this.setState({ selectTabItemName: "tab3" })}
