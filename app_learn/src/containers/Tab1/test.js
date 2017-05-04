@@ -24,6 +24,7 @@ class SheetDetailContainer extends Component {
         return (
             <View style={styles.container}>
                 <NavigationBar title="测试标题" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+
             </View>
         )
     }

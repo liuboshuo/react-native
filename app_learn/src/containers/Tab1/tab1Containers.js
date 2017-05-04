@@ -31,6 +31,8 @@ import ParallaxScrollViewDemo from './parallaxScrollViewDemo'
 import GalleryDemo from './galleryDemo'
 import CkeckBoxDemo from './ckeckBox'
 import ImageLoadingDemo from './imageLoadingDemo'
+import BarcodescannerDemo from './barcodescannerDemo'
+import TestImageBase64Demo from './testImageBase64Demo'
 class HomeContainers extends Component {
     constructor(props) {
         super(props);
@@ -115,7 +117,16 @@ class HomeContainers extends Component {
             },
             {
                 title:'checkbox',
-                component:CkeckBoxDemo}
+                component:CkeckBoxDemo
+            },
+            {
+                title:'二维码扫描',
+                component:BarcodescannerDemo
+            },
+            {
+                title:'image转化base64',
+                component:TestImageBase64Demo
+            }
 
         ]
     }

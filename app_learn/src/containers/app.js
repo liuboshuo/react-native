@@ -25,7 +25,7 @@ export default class App extends Component {
 
             <TabNavigator.Item
                 selected={this.state.selectTabItemName === "tab1"}
-                title={"首页"}
+                title={"tab1"}
                 //{/*renderIcon={() => <Image source={{uri:normalIconName}} style={styles.tabIconStyle}/>}*/}
                 //{/*renderSelectedIcon={() => <Image source={{uri:selectIconName}} style={styles.tabIconStyle}/>}*/}
                 onPress={() => this.setState({ selectTabItemName: "tab1" })}

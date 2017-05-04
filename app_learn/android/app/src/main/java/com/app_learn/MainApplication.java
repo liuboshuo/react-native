@@ -3,6 +3,9 @@ package com.app_learn;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.github.xfumihiro.react_native_image_to_base64.ImageToBase64Package;
+import com.lwansbrough.RCTCamera.RCTCameraPackage;
+import com.eguma.barcodescanner.BarcodeScannerPackage;
 import com.beefe.picker.PickerViewPackage;
 import com.brentvatne.react.ReactVideoPackage;
 import com.imagepicker.ImagePickerPackage;
@@ -27,6 +30,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new ImageToBase64Package(),
+            new RCTCameraPackage(),
+            new BarcodeScannerPackage(),
             new PickerViewPackage(),
             new ReactVideoPackage(),
             new ImagePickerPackage(),

@@ -1,4 +1,10 @@
 rootProject.name = 'app_learn'
+include ':react-native-image-to-base64'
+project(':react-native-image-to-base64').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-image-to-base64/android')
+include ':react-native-camera'
+project(':react-native-camera').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-camera/android')
+include ':react-native-barcodescanner'
+project(':react-native-barcodescanner').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-barcodescanner/android')
 include ':react-native-picker'
 project(':react-native-picker').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-picker/android')
 include ':react-native-video'
