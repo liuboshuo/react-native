@@ -12,18 +12,23 @@ import {
 } from 'react-native';
 import NavigationBar from '../../component/navBarCommon'
 import * as Constants from './../../constants/constant'
+import MsgListContainer from './../Tab2/tab2ListContainer'
+import {connect} from 'react-redux'
 class MyCenterContainer extends Component {
     constructor(props) {
         super(props);
     }
 
+    componentDidMount(){
+        console.log(this.props.dispatch);
+    }
     render() {
         return (
             <View style={styles.container}>
                 <NavigationBar title=""/>
-                <View style={styles.content}>
+                <TouchableOpacity style={styles.content}>
                     <Text>tab2</Text>
-                </View>
+                </TouchableOpacity>
             </View>
         )
     }
@@ -42,4 +47,8 @@ const styles = StyleSheet.create({
 
 })
 
-export default MyCenterContainer;
+function mapStateToProps(state) {
+    return state;
+}
+
+export default connect(mapStateToProps) (MyCenterContainer);

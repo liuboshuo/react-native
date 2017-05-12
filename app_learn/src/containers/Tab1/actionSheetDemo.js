@@ -9,6 +9,7 @@ import {
     Image,
     ActivityIndicator,
     TouchableOpacity,
+    NativeModules
 } from 'react-native';
 import ActionSheet from 'react-native-actionsheet'
 import NavigationBar from '../../component/navBarCommon'
@@ -29,6 +30,11 @@ export default class ActionSheetDemo extends Component {
     }
     click()
     {
+        NativeModules.TestNativeModues.test("text").then((text)=>{
+           console.log(text);
+        }).catch((error)=>{
+            console.log(error);
+        });
         this.ActionSheet.show()
     }
     showText(i)

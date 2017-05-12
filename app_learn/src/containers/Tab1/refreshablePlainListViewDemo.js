@@ -13,7 +13,6 @@ import NavigationBar from '../../component/navBarCommon'
 import SheetDetailContainer from './test'
 import HttpTool from '../../common/httpTool'
 import * as Constants from  '../../constants/constant'
-import LoadMoreFooter from  '../../component/loadMoreFooter'
 import MyListView from '../../component/myListView'
 import back from './../../source/images/icon_back.png'
 
@@ -38,19 +37,10 @@ class RefreshablePlainListView extends Component {
                 callback(null)
         });
     }
-    gotodetail(data){
-        const {navigator} = this.props;
-        navigator.push({
-            component: SheetDetailContainer,
-            params:{
-                data
-            }
-        })
-    }
     renderRow(data){
         const {imagePath,productName,companyName} = data;
         return (
-            <TouchableOpacity onPress={()=>this.gotodetail(data)}>
+            <TouchableOpacity>
                 <View style={styles.viewStyle}>
                     <Image source={{uri: "https:" + imagePath}} style={styles.cellImage}/>
                     <View style={styles.textView}>
@@ -66,10 +56,6 @@ class RefreshablePlainListView extends Component {
             </TouchableOpacity>
         );
     }
-
-    renderFooter() {
-        return (<LoadMoreFooter />)
-    }
     render() {
         const {navigator} = this.props;
         return (
@@ -77,7 +63,6 @@ class RefreshablePlainListView extends Component {
                 <NavigationBar title="Plain ListView" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
                 <MyListView onFetch={this.loadData.bind(this)}
                             renderRow={(data)=>this.renderRow(data)}
-                            renderFooter={ this.renderFooter.bind(this)}
                             enableFooter={true}
                 />
             </View>

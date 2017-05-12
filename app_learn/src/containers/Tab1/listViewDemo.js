@@ -22,7 +22,6 @@ import NewWorkImage from  './../../component/newWorkImage'
 import back from './../../source/images/icon_back.png'
 
 const pageSize = 45;
-
 class SheetContainer extends Component {
     constructor(props) {
         super(props);
@@ -36,29 +35,18 @@ class SheetContainer extends Component {
             productNormalList:[]
         }
     }
-
     stopRefresh(refresh){
         this.setState({
             isRefreshing:refresh,
         });
     }
-
     componentDidMount(){
         this.loadData(this.state.pageNo);
-    }
-    gotodetail(data){
-        const {navigator} = this.props;
-        navigator.push({
-            component: SheetDetailContainer,
-            params:{
-                data
-            }
-        })
     }
     renderRow(data){
         const {imagePath,productName,companyName} = data;
         return (
-            <TouchableOpacity onPress={()=>this.gotodetail(data)}>
+            <TouchableOpacity>
                 <View style={styles.viewStyle}>
                     <NewWorkImage uri={"https:" + imagePath} width={60} height={50} placeholder={{uri:require("./../../source/images/placeholder_icon.png")}}/>
                     <View style={styles.textView}>

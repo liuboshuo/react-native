@@ -6,7 +6,7 @@ import {
     Dimensions,
     Image,
     ListView,
-    PixelRatio,
+    Platform,
     StyleSheet,
     Text,
     View,
@@ -92,7 +92,7 @@ class ParallaxScrollViewDemo extends Component {
 const window = Dimensions.get('window');
 const ROW_HEIGHT = 60;
 const PARALLAX_HEADER_HEIGHT = 200;
-const STICKY_HEADER_HEIGHT = 64;
+const STICKY_HEADER_HEIGHT = Platform.OS == 'ios' ? 64 : 44;
 
 const styles = StyleSheet.create({
     container: {

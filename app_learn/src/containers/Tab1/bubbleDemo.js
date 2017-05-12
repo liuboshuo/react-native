@@ -11,6 +11,7 @@ import MyListView from './../../component/myListView'
 import * as Constants from './../../constants/constant'
 import back from './../../source/images/icon_back.png'
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview'
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 
 export default class BubbleDemo extends Component {
 
@@ -127,7 +128,6 @@ export default class BubbleDemo extends Component {
             <View style={{flex:1, backgroundColor:Constants.viewBgColor}}>
                 <NavigationBar title="聊天"  leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
 
-                <KeyboardAwareScrollView contentContainerStyle={{flex:1}} getTextInputRefs={() => { return [this._textInputRef];}}>
                     <MyListView
                         style={styles.myListViewStyle}
                         onFetch={this.loadData.bind(this)}
@@ -147,7 +147,8 @@ export default class BubbleDemo extends Component {
                     </View>
 
 
-                </KeyboardAwareScrollView>
+                    <KeyboardSpacer/>
+
 
 
             </View>

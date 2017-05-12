@@ -33,6 +33,11 @@ import CkeckBoxDemo from './ckeckBox'
 import ImageLoadingDemo from './imageLoadingDemo'
 import BarcodescannerDemo from './barcodescannerDemo'
 import TestImageBase64Demo from './testImageBase64Demo'
+import TestTextInputDemo from './testTextInputDemo'
+import photoBrowserDemo from './photoBrowserDemo'
+import photoBrowserListView from './photoBrowserListView'
+import cameraRollDemo from './cameraRollDemo'
+import combinedDemo from './combinedDemo'
 class HomeContainers extends Component {
     constructor(props) {
         super(props);
@@ -120,14 +125,29 @@ class HomeContainers extends Component {
                 component:CkeckBoxDemo
             },
             {
-                title:'二维码扫描',
+                title:'二维码扫描Demo',
                 component:BarcodescannerDemo
             },
             {
-                title:'image转化base64',
+                title:'base64',
                 component:TestImageBase64Demo
+            },
+            {
+                title:"输入框测试",
+                component:TestTextInputDemo
+            },
+            {
+                title:'照片浏览',
+                component:photoBrowserListView
+            },
+            {
+                title:'picker',
+                component:cameraRollDemo
+            },
+            {
+                title:'按钮',
+                component:combinedDemo
             }
-
         ]
     }
     gotodetail(data){
