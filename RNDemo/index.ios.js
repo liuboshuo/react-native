@@ -33,5 +33,6 @@ import SystemTabBar from './src/Demo/SystemTabBar'
 import LSMain from './src/Demo/Component/LSMain'
 import BSMain from './src/Dev/LSCompre/Main/BSMain'
 import BSFirstTopListView from './src/Dev/LSCompre/Home/BSFirstTopListView'
+import Main from './src/Demo/Main'
 
-AppRegistry.registerComponent('RNDemo', () => BSMain);
+AppRegistry.registerComponent('RNDemo', () => Main);
