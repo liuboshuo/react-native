@@ -19,7 +19,7 @@ RCT_EXPORT_METHOD(test:(NSString *)text
                   rejecter:(RCTPromiseRejectBlock)reject){
  
   
-  resolve(@"test");
+  resolve(text);
   
 }
 

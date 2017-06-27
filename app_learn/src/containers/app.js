@@ -8,10 +8,10 @@ import TabNavigator from 'react-native-tab-navigator'
 import MsgListContainer from './Tab2/tab2ListContainer'
 import MyCenterContainer from './Tab3/tab3CenterContainer'
 import HomeContainers from './Tab1/tab1Containers'
+import {connect} from 'react-redux'
 
 
-
-export default class App extends Component {
+class App extends Component {
 
     constructor(props) {
         super(props);
@@ -55,6 +55,13 @@ export default class App extends Component {
         </TabNavigator>)
     }
 }
+
+function mapStateToProps(state) {
+    return state;
+}
+
+export default connect(mapStateToProps)(App);
+
 const styles = StyleSheet.create({
     selecttitleStyle:{
         color:'purple'

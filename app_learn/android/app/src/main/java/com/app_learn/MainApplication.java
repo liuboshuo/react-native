@@ -2,6 +2,7 @@ package com.app_learn;
 
 import android.app.Application;
 
+import com.app_learn.modules.TestNativePackage;
 import com.facebook.react.ReactApplication;
 import com.github.xfumihiro.react_native_image_to_base64.ImageToBase64Package;
 import com.lwansbrough.RCTCamera.RCTCameraPackage;
@@ -36,7 +37,8 @@ public class MainApplication extends Application implements ReactApplication {
             new PickerViewPackage(),
             new ReactVideoPackage(),
             new ImagePickerPackage(),
-            new PickerPackage()
+            new PickerPackage(),
+            new TestNativePackage()
       );
     }
   };
