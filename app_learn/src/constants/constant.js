@@ -16,5 +16,3 @@ export const screenHeigt = Dimensions.get("window").height;
 export const viewBgColor = "#e6e6e6";
 
 export const contentViewBgColor = "#fff";
-
-

@@ -33,6 +33,7 @@ import CkeckBoxDemo from './ckeckBox'
 import ImageLoadingDemo from './imageLoadingDemo'
 import BarcodescannerDemo from './barcodescannerDemo'
 import TestImageBase64Demo from './testImageBase64Demo'
+import TextInputAutoHeightDemo from './autoHeightDemo'
 class HomeContainers extends Component {
     constructor(props) {
         super(props);
@@ -126,6 +127,10 @@ class HomeContainers extends Component {
             {
                 title:'image转化base64',
                 component:TestImageBase64Demo
+            },
+            {
+                title:'AutoHeightDemo和处理键盘遮挡问题',
+                component:TextInputAutoHeightDemo
             }
 
         ]
