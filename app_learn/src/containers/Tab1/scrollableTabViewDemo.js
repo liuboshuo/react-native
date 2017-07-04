@@ -8,7 +8,7 @@ import {
 import * as Constants from './../../constants/constant'
 import back from './../../source/images/icon_back.png'
 import NavigationBar from '../../component/navBarCommon'
-import ScrollableTabView, {ScrollableTabBar,DefaultTabBar} from 'react-native-scrollable-tab-view'
+// import ScrollableTabView, {ScrollableTabBar,DefaultTabBar} from 'react-native-scrollable-tab-view'
 
 export default class ScrollableTabViewDemo extends Component {
 
@@ -17,23 +17,23 @@ export default class ScrollableTabViewDemo extends Component {
             <View style={styles.container}>
                 <NavigationBar title="选项卡" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
 
-                <ScrollableTabView
-                    locked={false}
-                    renderTabBar={()=><DefaultTabBar></DefaultTabBar>}
-                >
-                    <View tabLabel="tab1">
-                        <Text tabLabel="tab1">1</Text>
-                    </View>
-                    <View tabLabel="tab2">
-                        <Text>2</Text>
-                    </View>
+                {/*<ScrollableTabView*/}
+                    {/*locked={false}*/}
+                    {/*renderTabBar={()=><DefaultTabBar></DefaultTabBar>}*/}
+                {/*>*/}
+                    {/*<View tabLabel="tab1">*/}
+                        {/*<Text tabLabel="tab1">1</Text>*/}
+                    {/*</View>*/}
+                    {/*<View tabLabel="tab2">*/}
+                        {/*<Text>2</Text>*/}
+                    {/*</View>*/}
 
-                    <View tabLabel="tab3">
-                        <Text>3</Text>
-                    </View>
+                    {/*<View tabLabel="tab3">*/}
+                        {/*<Text>3</Text>*/}
+                    {/*</View>*/}
 
 
-                </ScrollableTabView>
+                {/*</ScrollableTabView>*/}
 
             </View>
         );

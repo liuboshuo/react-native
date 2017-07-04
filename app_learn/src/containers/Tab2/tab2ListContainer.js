@@ -5,36 +5,198 @@ import React, { Component } from 'react';
 import {
     View,
     Text,
-    Image,
     StyleSheet,
-    TouchableOpacity,
-    RefreshControl,
-    ListView
+    UIManager,
 } from 'react-native';
 import NavigationBar from '../../component/navBarCommon'
 import * as Constants from  '../../constants/constant'
-import { loadData }  from './../../action/tab2Action'
 import {connect} from 'react-redux'
-import MyListViewRedux from './../../component/myListViewRedux'
-import HttpTool from '../../common/httpTool'
-import SheetDetailContainer from './../Tab1/test'
 
 
 class MsgListContainer extends Component {
 
-    rightAction(){
-        const {navigator} = this.props;
-        navigator.push({
-            component: SheetDetailContainer,
+    constructor(props){
+        super(props);
+        this.state = {
+            bg:"orange",
+            bg1:"red",
+            bg2:"yellow",
+            view3:{
+                top:150,
+                left:90.5,
+            }
+        }
+        this.lastMove = null;
+        this.panResponder1 = {
+            onStartShouldSetResponder:(nativeEvent, gestureState)=>{
+                return true
+            },
+            onMoveShouldSetResponder:(nativeEvent, gestureState)=> {
+                return true
+            },
+            onResponderGrant:(nativeEvent, gestureState)=> {
+                this.setState({
+                    bg1:"blue"
+                })
+            },
+            onResponderMove:(nativeEvent, gestureState)=>{
+                return true
+            },
+            onResponderRelease:(nativeEvent, gestureState)=>{
+                this.setState({
+                    bg1:"red"
+                })
+            },
+            onResponderTerminationRequest:()=>{
+                return false;
+            },
+            //结束异常事件的响应
+            onResponderTerminate:()=>{
+
+            }
+        }
+
+        this.panResponder2 = {
+            onStartShouldSetResponder:(nativeEvent, gestureState)=>{
+                // false 不响应 -> view1会响应
+                return true
+            },
+            onMoveShouldSetResponder:(nativeEvent, gestureState)=> {
+                return true
+            },
+            onResponderGrant:(nativeEvent, gestureState)=> {
+                this.setState({
+                    bg2:"green"
+                })
+            },
+            onResponderMove:(nativeEvent, gestureState)=>{
+                return true
+            },
+            onResponderRelease:(nativeEvent, gestureState)=>{
+                this.setState({
+                    bg2:"yellow"
+                })
+            },
+            onResponderTerminationRequest:()=>{
+                return true;
+            },
+            //结束异常事件的响应
+            onResponderTerminate:()=>{
+
+            }
+        }
+        this.panResponder0 = {
+            onStartShouldSetResponder:(evt,gestureState)=>{return true},
+            onMoveShouldSetResponder:(evt,gestureState)=>{return true},
+            onStartShouldSetPanResponderCapture:(evt,gestureState)=>{return true},
+            onStartShouldSetPanResponder:(evt,gestureState)=>{return true},
+            onMoveShouldSetPanResponderCapture:(evt,gestureState)=>{return true},
+            onMoveShouldSetPanResponder:(evt,gestureState)=>{
+                return true
+            },
+            onResponderGrant:(evt, gestureState)=> {
+                console.log(evt.nativeEvent)
+            },
+            onResponderMove:(evt, gestureState)=>{
+                console.log(evt.nativeEvent)
+                if (this.state.view3.top<0 || this.state.view3.left <0 || this.state.view3.top + this.moveHeight > this.height || this.state.view3.left + this.moveWidth > this.width){
+                    return
+                }
+                if (this.lastMove){
+                    const subTop = evt.nativeEvent.locationY - this.lastMove.y;
+                    const subLeft = evt.nativeEvent.locationX - this.lastMove.x;
+                    let top = this.state.view3.top + subTop;
+                    let left = this.state.view3.left + subLeft;
+                    if (top<=0) top = 0;
+                    if (left<=0) left =0 ;
+                    if (top+this.moveHeight >= this.height) top = this.height - this.moveHeight
+                    if (left+this.moveWidth >= this.width) left = this.width - this.moveWidth
+                    this.setState({
+                        view3:{
+                            top:top,
+                            left:left
+                        }
+                    })
+                }
+                this.lastMove = {
+                    x:evt.nativeEvent.locationX,
+                    y:evt.nativeEvent.locationY
+                }
+            },
+            onResponderRelease:(evt, gestureState)=>{
+                this.lastMove = null
+            },
+        }
+
+    }
+    layout(e){
+        console.log(e.layout)
+        console.log(e)
+        this.width = e.layout.width;
+        this.height = e.layout.height;
+        UIManager.measure(e.target,(x,y,width,height,left,top)=> {
+            console.log("x= " + x);
+            console.log("y= " + y);
+            console.log("width= " + width);
+            console.log("height= " + height);
+            console.log("left= " + left);
+            console.log("top= " + top);
         })
+    }
+    layoutMove(e){
+        this.moveWidth = e.layout.width;
+        this.moveHeight = e.layout.height;
     }
     render() {
         return (
             <View style={styles.container}>
-                <NavigationBar title="Plain ListView" rightTitle={"点击"} rightAction={this.rightAction.bind(this)}/>
-                <TouchableOpacity>
-                    <Text>tab2</Text>
-                </TouchableOpacity>
+                <NavigationBar title="tab 2"/>
+                <View ref="btn"
+                      style={styles.outView}
+                      onLayout={({nativeEvent:e})=>this.layout(e)}
+                >
+                    <View style={[styles.textView,{backgroundColor:this.state.bg}]}
+                          onStartShouldSetResponder={(nativeEvent, gestureState)=>{
+                              return true
+                          }}
+                          onMoveShouldSetResponder={(nativeEvent, gestureState)=>{
+                              return true
+                          }}
+                          onResponderGrant={(nativeEvent, gestureState)=> {
+                              this.setState({
+                                  bg:"gray"
+                              })
+                          }}
+                          onResponderMove={(event, gestureState)=>{
+                              return true
+                          }}
+                          onResponderRelease={(nativeEvent, gestureState)=>{
+                              this.setState({
+                                  bg:"blue"
+                              })
+                          }}
+                    >
+                        <Text>click</Text>
+                    </View>
+
+
+                    <View style={[styles.one,{backgroundColor:this.state.bg1}]}
+                          {...this.panResponder1}
+                    >
+                        <View style={[styles.two,{backgroundColor:this.state.bg2}]}
+                              {...this.panResponder2}
+                        >
+                            <Text>子View</Text>
+                        </View>
+                    </View>
+                    <View onLayout={({nativeEvent:e})=>this.layoutMove(e)} style={[styles.moveView,{...this.state.view3}]}
+                          {...this.panResponder0}
+                    >
+                        <Text>可拖拽</Text>
+                    </View>
+
+
+                </View>
             </View>
         )
     }
@@ -44,10 +206,47 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         backgroundColor:Constants.viewBgColor,
+    },
+    outView:{
+        flex:1,
+    },
+    textView:{
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center',
+        width:60,
+        height:60,
+        borderRadius:30,
+    },
+    one:{
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center',
+        width:90,
+        height:90,
+        borderRadius:45,
+    },
+    two:{
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center',
+        width:60,
+        height:60,
+        borderRadius:30,
+    },
+    moveView:{
+        position:'absolute',
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center',
+        width:60,
+        height:60,
+        borderRadius:30,
+        backgroundColor:"red"
     }
 })
 function mapStateToProps(state) {
     const {tab2Reducer} = state;
     return tab2Reducer;
 }
-export default connect(mapStateToProps)(MsgListContainer);
+export default connect(null)(MsgListContainer);

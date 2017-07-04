@@ -13,7 +13,6 @@ import {
 } from 'react-native';
 import ActionSheet from 'react-native-actionsheet'
 import NavigationBar from '../../component/navBarCommon'
-import {Container,Button,Toast} from  'native-base'
 import * as Constants from './../../constants/constant'
 import back from './../../source/images/icon_back.png'
 let title = "action"

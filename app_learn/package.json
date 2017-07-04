@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "ac-qrcode": "^1.0.1",
-    "native-base": "^2.1.2",
     "react": "16.0.0-alpha.6",
     "react-native": "0.43.4",
     "react-native-actionsheet": "^2.1.0",

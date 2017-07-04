@@ -32,16 +32,11 @@ import GalleryDemo from './galleryDemo'
 import CkeckBoxDemo from './ckeckBox'
 import ImageLoadingDemo from './imageLoadingDemo'
 import BarcodescannerDemo from './barcodescannerDemo'
-import TestImageBase64Demo from './testImageBase64Demo'
-<<<<<<< .merge_file_6xIKUV
 import TextInputAutoHeightDemo from './autoHeightDemo'
-=======
 import TestTextInputDemo from './testTextInputDemo'
-import photoBrowserDemo from './photoBrowserDemo'
 import photoBrowserListView from './photoBrowserListView'
 import cameraRollDemo from './cameraRollDemo'
 import combinedDemo from './combinedDemo'
->>>>>>> .merge_file_pE5O1X
 class HomeContainers extends Component {
     constructor(props) {
         super(props);
@@ -93,7 +88,7 @@ class HomeContainers extends Component {
                 component:ImageLoadingDemo
             },
             {
-                title:"选项卡",
+                title:"scrollView选项卡",
                 component:ScrollableTabViewDemo
             },
             {
@@ -121,10 +116,6 @@ class HomeContainers extends Component {
                 component:ParallaxScrollViewDemo
             },
             {
-                title:'照片浏览',
-                component:GalleryDemo
-            },
-            {
                 title:'checkbox',
                 component:CkeckBoxDemo
             },
@@ -133,14 +124,6 @@ class HomeContainers extends Component {
                 component:BarcodescannerDemo
             },
             {
-                title:'base64',
-                component:TestImageBase64Demo
-            },
-            {
-<<<<<<< .merge_file_6xIKUV
-                title:'AutoHeightDemo和处理键盘遮挡问题',
-                component:TextInputAutoHeightDemo
-=======
                 title:"输入框测试",
                 component:TestTextInputDemo
             },
@@ -149,13 +132,20 @@ class HomeContainers extends Component {
                 component:photoBrowserListView
             },
             {
-                title:'picker',
+                title:'照片浏览可放大',
+                component:GalleryDemo
+            },
+            {
+                title:'图片选择（react-native实现）',
                 component:cameraRollDemo
             },
             {
-                title:'按钮',
+                title:'按钮组件',
                 component:combinedDemo
->>>>>>> .merge_file_pE5O1X
+            },
+            {
+                title:'AutoHeightDemo和处理键盘遮挡问题',
+                component:TextInputAutoHeightDemo
             }
         ]
     }

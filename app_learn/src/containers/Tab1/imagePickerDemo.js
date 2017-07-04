@@ -5,7 +5,6 @@ import {
 } from 'react-native';
 
 import NavigationBar from '../../component/navBarCommon'
-import {Container,Button} from  'native-base'
 import * as Constants from  './../../constants/constant'
 import Video from 'react-native-video';
 import back from './../../source/images/icon_back.png'

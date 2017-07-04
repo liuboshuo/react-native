@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 
 import NavigationBar from '../../component/navBarCommon'
-import {Container,Button} from  'native-base'
 import ImagePicker from 'react-native-image-picker'
 
 export default class ImageSinglePickerDemo extends Component {
@@ -54,9 +53,9 @@ export default class ImageSinglePickerDemo extends Component {
             <Container>
                 <NavigationBar title=""/>
 
-                <Button onPress={this.onClickHandle.bind(this)}>
+                <TouchableOpacity style={styles.buttonStyle} activeOpacity={0.5} onPress={()=>this.pickSingle(false)}>
                     <Text>点击</Text>
-                </Button>
+                </TouchableOpacity>
                 <Image source={this.state.avatarSource} style={styles.uploadAvatar} />
             </Container>
         );
@@ -71,5 +70,13 @@ const styles = StyleSheet.create({
     uploadAvatar:{
         width:100,
         height:100
+    },
+    buttonStyle:{
+        height:40,
+        backgroundColor:'red',
+        justifyContent:'center',
+        alignItems:'center',
+        borderRadius:6,
+        margin:10
     }
 });

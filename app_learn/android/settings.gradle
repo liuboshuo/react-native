@@ -1,4 +1,6 @@
 rootProject.name = 'app_learn'
+include ':react-native-datetime'
+project(':react-native-datetime').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-datetime/android')
 include ':react-native-image-to-base64'
 project(':react-native-image-to-base64').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-image-to-base64/android')
 include ':react-native-camera'

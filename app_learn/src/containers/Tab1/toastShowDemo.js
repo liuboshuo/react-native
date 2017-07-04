@@ -9,7 +9,6 @@ import {
     TouchableOpacity
 } from 'react-native';
 import NavigationBar from '../../component/navBarCommon'
-import {Container,Button} from  'native-base'
 import Toast from 'react-native-easy-toast'
 import * as Constants from './../../constants/constant'
 import back from './../../source/images/icon_back.png'

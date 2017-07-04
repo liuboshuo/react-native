@@ -38,7 +38,7 @@ export default class BarcodescannerDemo extends Component {
     }
     renderTitleBar(){
         return(
-            <NavigationBar title="二维码" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+            <NavigationBar style={{zIndex:10}} title="二维码" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
         );
     }
     render() {
