@@ -1,18 +1,18 @@
 /**
  * Created by liushuo on 17/7/6.
  */
-/**
- * Created by liushuo on 17/7/5.
- */
 import React , {Component} from 'react';
-import {AppRegistry ,  Text , View, StyleSheet, Navigator, Platform} from 'react-native';
+import {Text , View, StyleSheet} from 'react-native';
 
-export default class HomeDetailScreen extends Component {
+export default class Tab2 extends Component {
+    static navigationOptions = {
+        title:"tab two"
+    }
     render(){
-        const {naavigate} = this.props;
+        const {naavigate} = this.props.navigation;
         return(
             <View style={styles.container}>
-                <Text>chat</Text>
+                <Text>tab two</Text>
             </View>
         )
     }

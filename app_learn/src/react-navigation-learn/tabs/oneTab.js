@@ -1,18 +1,19 @@
+/**
+ * Created by liushuo on 17/7/6.
+ */
 import React , {Component} from 'react';
-import {AppRegistry ,  Text , View, StyleSheet, TouchableOpacity} from 'react-native';
-import Chat from './home'
-import {StackNavigator} from 'react-navigation'
-export default class HomeScreen extends Component {
+import {Text , View, StyleSheet, TouchableOpacity} from 'react-native';
+export default class Tab1 extends Component {
     static navigationOptions = {
-        title:"首页"
+        title:"tab one"
     }
     render() {
         const {navigate} = this.props.navigation;
         return (
             <View style={styles.container}>
 
-                <TouchableOpacity onPress={()=>navigate('homeDetail')}>
-                    <Text> react_navigation</Text>
+                <TouchableOpacity onPress={()=>navigate('homeDetail',{user:"我是参数"})}>
+                    <Text>tab one</Text>
                 </TouchableOpacity>
             </View>
         )
