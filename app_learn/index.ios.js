@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 import Application from './src/application'
-
+import SimpleApp from './src/react-navigation-learn/react-navigation'
 export default class app_learn extends Component {
   render() {
     return (
@@ -20,4 +20,4 @@ export default class app_learn extends Component {
     );
   }
 }
-AppRegistry.registerComponent('app_learn', () => app_learn);
+AppRegistry.registerComponent('app_learn', () => SimpleApp);
