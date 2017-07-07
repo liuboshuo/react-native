@@ -38,16 +38,19 @@ export default class BarcodescannerDemo extends Component {
     }
     renderTitleBar(){
         return(
-            <NavigationBar style={{zIndex:10}} title="二维码" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+            <View/>
         );
     }
     render() {
+        const {title} = this.props.data;
         return (
             <View style={styles.container}>
+                <NavigationBar style={{zIndex:10}} title={title} leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+
                 <QRScannerView
                     onScanResultReceived={this.barcodeResult.bind(this)}
-                    renderTopBarView={() => this.renderTitleBar()}
                     renderBottomMenuView={() => this.renderMenu()}
+                    renderTopBarView={() => this.renderTitleBar()}
                 />
             </View>
         );

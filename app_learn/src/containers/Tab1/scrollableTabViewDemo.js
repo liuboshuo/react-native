@@ -13,9 +13,10 @@ import NavigationBar from '../../component/navBarCommon'
 export default class ScrollableTabViewDemo extends Component {
 
     render() {
+        const {title} = this.props.data;
         return (
             <View style={styles.container}>
-                <NavigationBar title="选项卡" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+                <NavigationBar title={title} leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
 
                 {/*<ScrollableTabView*/}
                     {/*locked={false}*/}

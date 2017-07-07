@@ -19,7 +19,6 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        backgroundColor:"purple",
         flexDirection:'row',
         justifyContent:"center",
         alignItems:'center'

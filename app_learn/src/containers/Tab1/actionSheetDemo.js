@@ -41,9 +41,10 @@ export default class ActionSheetDemo extends Component {
         this.setState({text:"选择结果内容下标是:" + i})
     }
     render() {
+        const {title} = this.props.data;
         return (
             <View style={{flex:1, backgroundColor:Constants.viewBgColor}}>
-                <NavigationBar title="actionsheet" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+                <NavigationBar title={title} leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
                 <View style={styles.textViewStyle}>
                     <Text>{this.state.text}</Text>
                 </View>

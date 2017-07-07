@@ -14,12 +14,11 @@ export default class Application extends Component {
 				<Navigator
 					initialRoute={{ component: App }}
 					configureScene={(route, routeStack) => {
-                        return Navigator.SceneConfigs.FloatFromRight;
+                        return Navigator.SceneConfigs.PushFromRight;
                     }}
 					renderScene={(route, navigator) => {
                         let Component = route.component;
                         return <Component {...route.params} navigator={navigator} />
-                        //  上面的route.params 是为了方便后续界面间传递参数用的
                     }}
 				/>
 			</Provider>

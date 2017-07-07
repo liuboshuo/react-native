@@ -24,9 +24,10 @@ class QRCodeDemo extends Component {
         })
     }
     render() {
+        const {title} = this.props.data;
         return (
             <View style={styles.container}>
-                <NavigationBar title="二维码" leftImage={require('./../../source/images/icon_back.png')} leftAction={()=>this.props.navigator.pop()}/>
+                <NavigationBar title={title} leftImage={require('./../../source/images/icon_back.png')} leftAction={()=>this.props.navigator.pop()}/>
 
                 <View style={styles.view}>
                     <QRCode

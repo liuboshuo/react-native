@@ -58,9 +58,10 @@ class RefreshablePlainListView extends Component {
     }
     render() {
         const {navigator} = this.props;
+        const {title} = this.props.data;
         return (
             <View style={styles.container}>
-                <NavigationBar title="Plain ListView" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+                <NavigationBar title={title} leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
                 <MyListView onFetch={this.loadData.bind(this)}
                             renderRow={(data)=>this.renderRow(data)}
                             enableFooter={true}

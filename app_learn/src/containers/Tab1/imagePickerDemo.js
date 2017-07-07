@@ -135,9 +135,10 @@ export default class ImagePickerDemo extends Component {
           </View>)
   }
   render() {
+      const {title} = this.props.data;
     return (
         <View style={styles.container}>
-            <NavigationBar title="图片选择器" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+            <NavigationBar title={title} leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
 
             <ScrollView style={styles.view}>
 

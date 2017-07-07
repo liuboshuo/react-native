@@ -20,4 +20,4 @@ export default class app_learn extends Component {
     );
   }
 }
-AppRegistry.registerComponent('app_learn', () => SimpleApp);
+AppRegistry.registerComponent('app_learn', () => app_learn);

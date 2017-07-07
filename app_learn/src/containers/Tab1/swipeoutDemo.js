@@ -38,7 +38,7 @@ export default class SwipeoutDemo extends Component {
     componentDidMount(){
         this.setState(
             {
-                dataSource:this.state.dataSource.cloneWithRows(['row1','row2','row3','row4','row5','row6','row7','row8','row9','row10','row11'])
+                dataSource:this.state.dataSource.cloneWithRows(['row1','row2','row3','row4','row5','row6','row7','row8','row9','row10'])
             }
         )
     }
@@ -47,7 +47,7 @@ export default class SwipeoutDemo extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <NavigationBar title="cell 侧滑" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+                <NavigationBar title="侧滑" leftImage={back} leftAction={()=>this.props.navigator.pop()}/>
                 <ListView
                     dataSource={this.state.dataSource}
                     renderRow={(cellData)=>this.cell(cellData)}

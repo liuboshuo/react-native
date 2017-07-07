@@ -2,12 +2,14 @@
  * Created by liushuo on 17/7/6.
  */
 import React , {Component} from 'react';
-import {Text , View, StyleSheet} from 'react-native';
+import {
+    Text,
+    View,
+    StyleSheet,
+    Image
+} from 'react-native';
 
 export default class Tab2 extends Component {
-    static navigationOptions = {
-        title:"tab two"
-    }
     render(){
         const {naavigate} = this.props.navigation;
         return(
@@ -20,9 +22,12 @@ export default class Tab2 extends Component {
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        backgroundColor:"purple",
         flexDirection:'row',
         justifyContent:"center",
         alignItems:'center'
+    },
+    iconStyle:{
+        width:30,
+        height:30
     }
 })

@@ -125,11 +125,12 @@ class CustomPickerDemo extends Component {
     }
 
     render() {
+        const {title} = this.props.data;
         return (
             <View style={styles.container}>
 
 
-                <NavigationBar title="Picker View" leftImage={ back } leftAction={()=>{this.props.navigator.pop();Picker.hide();}}/>
+                <NavigationBar title={title} leftImage={ back } leftAction={()=>{this.props.navigator.pop();Picker.hide();}}/>
 
                 <TouchableOpacity style={styles.buttonStyle} activeOpacity={0.5} onPress={this.picker1.bind(this)}>
                     <Text>Picker1选择</Text>

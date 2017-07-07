@@ -29,14 +29,12 @@ import QRCodeDemo from './codeDemo'
 import LeftSlidePageDemo from './leftSlidePageDemo'
 import ParallaxScrollViewDemo from './parallaxScrollViewDemo'
 import GalleryDemo from './galleryDemo'
-import CkeckBoxDemo from './ckeckBox'
 import ImageLoadingDemo from './imageLoadingDemo'
 import BarcodescannerDemo from './barcodescannerDemo'
 import TextInputAutoHeightDemo from './autoHeightDemo'
 import TestTextInputDemo from './testTextInputDemo'
 import photoBrowserListView from './photoBrowserListView'
 import cameraRollDemo from './cameraRollDemo'
-import combinedDemo from './combinedDemo'
 class HomeContainers extends Component {
     constructor(props) {
         super(props);
@@ -84,15 +82,15 @@ class HomeContainers extends Component {
                 component:LoadingImage
             },
             {
-                title:'加载图片控件',
+                title:'网络图片显示加载进度',
                 component:ImageLoadingDemo
             },
             {
-                title:"scrollView选项卡",
+                title:"ScrollView Tab选项卡",
                 component:ScrollableTabViewDemo
             },
             {
-                title:"actionsheet",
+                title:"ActionSheet",
                 component:ActionSheetDemo
             },
             {
@@ -116,10 +114,6 @@ class HomeContainers extends Component {
                 component:ParallaxScrollViewDemo
             },
             {
-                title:'checkbox',
-                component:CkeckBoxDemo
-            },
-            {
                 title:'二维码扫描Demo',
                 component:BarcodescannerDemo
             },
@@ -138,10 +132,6 @@ class HomeContainers extends Component {
             {
                 title:'图片选择（react-native实现）',
                 component:cameraRollDemo
-            },
-            {
-                title:'按钮组件',
-                component:combinedDemo
             },
             {
                 title:'AutoHeightDemo和处理键盘遮挡问题',

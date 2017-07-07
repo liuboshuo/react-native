@@ -25,24 +25,28 @@ class MenuDemo extends Component {
     componentDidMount(){
         let data = [
             {
-                title:"menu1",
+                title:"menu0",
                 item:"menu1"
             },
             {
-                title:"menu2",
+                title:"menu1",
                 item:"menu2"
             },
             {
-                title:"menu3",
+                title:"menu2",
                 item:"menu3"
             },
             {
-                title:"menu4",
+                title:"menu3",
                 item:"menu4"
             },
             {
-                title:"menu5",
+                title:"menu4",
                 item:"menu5"
+            },
+            {
+                title:"menu5",
+                item:"menu6"
             }
 
         ]

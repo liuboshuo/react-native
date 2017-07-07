@@ -2,19 +2,21 @@
  * Created by liushuo on 17/7/6.
  */
 import React , {Component} from 'react';
-import Button from './../../component/button'
-import {Text , View, StyleSheet,TouchableOpacity} from 'react-native';
-export default class HomeDetailScreen extends Component {
+import {Text , View, StyleSheet,Image} from 'react-native';
+export default class TwoPage extends Component {
 
-    static navigationOptions = (navigation)=>{
 
-       return(
-           {
-               title:"第二页",
-               headerRight:<Button text="测试" style={styles.navigationRightButton} textStyle={styles.textStyle}/>
-           }
-       )
+    //自定义
+    static navigationOptions = {
+        drawerLabel:"首页2",
+        drawerIcon:({tintColor})=>{
+            return (
+                <Image source={require("../../source/images/icon_crm.png")}
+                       style={[styles.iconStyle,{tintColor:tintColor }]}/>
+            )
+        }
     }
+
     componentDidMount() {
         console.log("componentDidMount")
     }
@@ -24,10 +26,9 @@ export default class HomeDetailScreen extends Component {
     }
     render(){
         const {naavigate} = this.props.navigation;
-        const {user} = this.props.navigation.state.params;
         return(
             <View style={styles.container}>
-                <Text>{user}</Text>
+                <Text>user</Text>
             </View>
         )
     }
@@ -47,5 +48,9 @@ const styles = StyleSheet.create({
         fontSize:17,
         color:"#fff",
         padding:5
+    },
+    iconStyle:{
+        width:30,
+        height:30
     }
 })

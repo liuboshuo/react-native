@@ -18,9 +18,10 @@ export default class LoadingImage extends Component {
     }
 
     render() {
+        const {title} = this.props.data;
         return (
             <View style={styles.container}>
-                <NavigationBar title="网络图片加载显示占位图" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+                <NavigationBar title={title} leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
                 <NetWorkImage uri={"http://cms-bucket.nosdn.127.net/2263228dc8e94e96bc64e467d210bf7220170427081659.jpeg"}
                               width={width}
                               height={120}

@@ -78,10 +78,11 @@ export default class photoBrowserListView extends Component {
     }
 
     render() {
+        const {title} = this.props.data;
         return (
 
         <View style={styles.container}>
-            <NavigationBar title="图片" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+            <NavigationBar title={title} leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
             <ListView
                 style={styles.list}
                 dataSource={this.state.dataSource}

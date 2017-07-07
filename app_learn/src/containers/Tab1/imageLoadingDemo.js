@@ -22,9 +22,10 @@ export default class ImageLoadingDemo extends Component {
     }
 
     render() {
+        const {title} = this.props.data;
         return (
             <View style={styles.container}>
-                <NavigationBar title="加载图片显示进度demo" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+                <NavigationBar title={title} leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
                 <Image
                     source={{ uri: 'http://loremflickr.com/640/480/dog'}}
 

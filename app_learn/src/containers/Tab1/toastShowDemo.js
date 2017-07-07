@@ -22,9 +22,10 @@ class ToastShowDemo extends Component {
     }
 
     render() {
+        const {title} = this.props.data;
         return (
             <View style={styles.container}>
-                <NavigationBar title="toast" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+                <NavigationBar title={title} leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
 
                 <TouchableOpacity style={styles.buttonStyle} onPress={()=>this.click()}>
                     <Text>show toast</Text>

@@ -44,9 +44,10 @@ export default class SwiperDemo extends Component {
     }
 
     render() {
+        const {title} = this.props.data;
         return (
             <View style={styles.container}>
-                <NavigationBar title="轮播图的测试" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+                <NavigationBar title={title} leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
                 <Swiper height={120} autoplay>
                     <View style={styles.view1}>
                     </View>

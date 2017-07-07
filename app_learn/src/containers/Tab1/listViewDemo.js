@@ -102,9 +102,10 @@ class SheetContainer extends Component {
     }
     render() {
         const {navigator} = this.props;
+        const {title} = this.props.data;
         return (
             <View style={styles.container}>
-                <NavigationBar title="测试" leftImage={ back } leftAction={()=>this.props.navigator.pop()} rightTitle="点击" rightAction={()=>{
+                <NavigationBar title={title} leftImage={ back } leftAction={()=>this.props.navigator.pop()} rightTitle="点击" rightAction={()=>{
 
                     let pro = this.state.productNormalList[0]
                     pro.companyName = "测试";

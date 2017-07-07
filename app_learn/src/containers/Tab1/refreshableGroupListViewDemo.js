@@ -57,9 +57,10 @@ export default class RefreshableGroupListView extends Component {
         );
     }
     render() {
+        const {title} = this.props.data;
         return (
             <View style={{flex:1, backgroundColor:Constants.viewBgColor}}>
-                <NavigationBar title="分组ListView" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+                <NavigationBar title={title} leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
                 <MyListView
                     onFetch={this.loadData.bind(this)}
                     renderRow={(data,sectionID,rowID,highlightRow)=>{ return this.renderRow0(data,sectionID,rowID,highlightRow)}}

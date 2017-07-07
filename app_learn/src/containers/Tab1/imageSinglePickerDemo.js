@@ -9,6 +9,7 @@ import {
 
 import NavigationBar from '../../component/navBarCommon'
 import ImagePicker from 'react-native-image-picker'
+import * as Constants from '../../constants/constant'
 
 export default class ImageSinglePickerDemo extends Component {
 
@@ -49,21 +50,27 @@ export default class ImageSinglePickerDemo extends Component {
         });
     }
     render() {
+        const {title} = this.props.data;
         return (
-            <Container>
-                <NavigationBar title=""/>
 
-                <TouchableOpacity style={styles.buttonStyle} activeOpacity={0.5} onPress={()=>this.pickSingle(false)}>
-                    <Text>点击</Text>
+            <View style={styles.container}>
+                <NavigationBar title={title}/>
+
+                        <TouchableOpacity style={styles.buttonStyle} activeOpacity={0.5} onPress={()=>this.pickSingle(false)}>
+                <Text>点击</Text>
                 </TouchableOpacity>
                 <Image source={this.state.avatarSource} style={styles.uploadAvatar} />
-            </Container>
+            </View>
         );
     }
 }
 
 
 const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        backgroundColor:Constants.viewBgColor,
+    },
     scrollView:{
         backgroundColor:'red'
     },

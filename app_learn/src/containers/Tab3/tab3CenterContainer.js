@@ -27,7 +27,7 @@ class MyCenterContainer extends Component {
             <View style={styles.container}>
                 <NavigationBar title=""/>
                 <TouchableOpacity style={styles.content}>
-                    <Text>tab2</Text>
+                    <Text>tab3</Text>
                 </TouchableOpacity>
             </View>
         )

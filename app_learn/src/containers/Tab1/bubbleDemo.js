@@ -124,9 +124,10 @@ export default class BubbleDemo extends Component {
     send(){
     }
     render() {
+        const {title} = this.props.data;
         return (
             <View style={{flex:1, backgroundColor:Constants.viewBgColor}}>
-                <NavigationBar title="聊天"  leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+                <NavigationBar title={title}  leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
 
                     <MyListView
                         style={styles.myListViewStyle}

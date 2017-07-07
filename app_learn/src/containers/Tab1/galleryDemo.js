@@ -21,9 +21,10 @@ class SheetDetailContainer extends Component {
     }
 
     render() {
+        const {title} = this.props.data;
         return (
             <View style={styles.container}>
-                <NavigationBar title="照片墙" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+                <NavigationBar title={title} leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
                 <Gallery
                     style={{flex: 1, backgroundColor: 'black'}}
                     images={[

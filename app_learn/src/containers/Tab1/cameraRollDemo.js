@@ -18,9 +18,10 @@ export default class cameraRollDemo extends Component {
 
     }
     render() {
+        const {title} = this.props.data;
         return (
             <View style={styles.container}>
-                <NavigationBar title="picker" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+                <NavigationBar title={title} leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
                 <CameraRollPicker
                     callback={this.getSelectedImages.bind(this)} />
             </View>

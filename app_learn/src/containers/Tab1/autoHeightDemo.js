@@ -41,11 +41,20 @@ class TextInputAutoHeightDemo extends Component {
         this.keyboardDidShowListener = Keyboard.addListener('keyboardWillShow',this.keyboardWillShow.bind(this))
         this.keyboardDidHideListener = Keyboard.addListener("keyboardWillHide",this.keyboardWillHide.bind(this))
     }
+
+    componentDidUnMount() {
+        this.keyboardDidShowListener.removeListener();
+        this.keyboardDidHideListener.removeListener();
+    }
     keyboardWillShow(event){
-        this.refs.scrollViewRef.scrollTo({y:event.endCoordinates.height,x:0})
+        if (this.refs.scrollViewRef){
+            this.refs.scrollViewRef.scrollTo({y:event.endCoordinates.height,x:0})
+        }
     }
     keyboardWillHide(event){
-        this.refs.scrollViewRef.scrollTo({y:0,x:0})
+        if (this.refs.scrollViewRef) {
+            this.refs.scrollViewRef.scrollTo({y: 0, x: 0})
+        }
     }
     onChangeText(change){
         this.setState({
@@ -67,9 +76,10 @@ class TextInputAutoHeightDemo extends Component {
         })
     }
     render() {
+        const {title} = this.props.data;
         return (
             <View style={styles.container}>
-                <NavigationBar title="自适应高度和键盘问题" leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
+                <NavigationBar title={title} leftImage={ back } leftAction={()=>this.props.navigator.pop()}/>
 
                 <ScrollView ref="scrollViewRef"
                             alwaysBounceVertical={false}>
