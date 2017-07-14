@@ -8,27 +8,38 @@ import {
     Image,
     StyleSheet,
     Platform,
-    TouchableOpacity
+    TouchableOpacity,
+    Animated
 } from 'react-native';
 import NavigationBar from '../../component/navBarCommon'
 import * as Constants from './../../constants/constant'
-import MsgListContainer from './../Tab2/tab2ListContainer'
 import {connect} from 'react-redux'
 class MyCenterContainer extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            bounceValue:new Animated.Value(0)
+        }
     }
-
     componentDidMount(){
-        console.log(this.props.dispatch);
+        this.state.bounceValue.setValue(1.5);
+        Animated.spring(this.state.bounceValue,{
+            toValue:0.5,
+            friction:1
+        }).start()
     }
     render() {
         return (
             <View style={styles.container}>
                 <NavigationBar title=""/>
-                <TouchableOpacity style={styles.content}>
-                    <Text>tab3</Text>
-                </TouchableOpacity>
+                <Animated.Image source={require('./../../source/images/icon_tab_view.png')}
+                                style={{
+                                    flex:1,
+                                    transform:[{
+                                        scale:this.state.bounceValue
+                                    }],
+                                    resizeMode:"stretch"
+                                }}/>
             </View>
         )
     }

@@ -35,6 +35,7 @@ import TextInputAutoHeightDemo from './autoHeightDemo'
 import TestTextInputDemo from './testTextInputDemo'
 import photoBrowserListView from './photoBrowserListView'
 import cameraRollDemo from './cameraRollDemo'
+import AnimatedDemo from './animateDemo'
 class HomeContainers extends Component {
     constructor(props) {
         super(props);
@@ -136,6 +137,10 @@ class HomeContainers extends Component {
             {
                 title:'AutoHeightDemo和处理键盘遮挡问题',
                 component:TextInputAutoHeightDemo
+            },
+            {
+                title:"动画的学习",
+                component:AnimatedDemo
             }
         ]
     }

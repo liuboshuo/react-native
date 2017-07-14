@@ -25,6 +25,7 @@ class MsgListContainer extends Component {
                 top:150,
                 left:90.5,
             }
+
         }
         this.lastMove = null;
         this.panResponder1 = {
