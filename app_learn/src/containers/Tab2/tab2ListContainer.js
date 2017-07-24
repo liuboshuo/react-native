@@ -7,6 +7,8 @@ import {
     Text,
     StyleSheet,
     UIManager,
+    Animated,
+    Easing
 } from 'react-native';
 import NavigationBar from '../../component/navBarCommon'
 import * as Constants from  '../../constants/constant'
@@ -24,7 +26,9 @@ class MsgListContainer extends Component {
             view3:{
                 top:150,
                 left:90.5,
-            }
+            },
+            animatedX:new Animated.Value(0),
+            animatedY:new Animated.Value(0)
 
         }
         this.lastMove = null;
@@ -112,12 +116,26 @@ class MsgListContainer extends Component {
                     if (left<=0) left =0 ;
                     if (top+this.moveHeight >= this.height) top = this.height - this.moveHeight
                     if (left+this.moveWidth >= this.width) left = this.width - this.moveWidth
-                    this.setState({
-                        view3:{
-                            top:top,
-                            left:left
-                        }
-                    })
+                    // this.setState({
+                    //     view3:{
+                    //         top:top,
+                    //         left:left
+                    //     }
+                    // })
+
+
+
+
+                    Animated.timing(this.state.animatedX,{
+                        toValue:left,
+                        ease:Easing.linear
+                    }).start();
+                    Animated.timing(this.state.animatedY,{
+                        toValue:top,
+                        ease:Easing.linear
+                    }).start();
+
+
                 }
                 this.lastMove = {
                     x:evt.nativeEvent.locationX,
@@ -125,7 +143,16 @@ class MsgListContainer extends Component {
                 }
             },
             onResponderRelease:(evt, gestureState)=>{
+                Animated.timing(this.state.animatedX,{
+                    toValue:evt.nativeEvent.pageX,
+                    ease:Easing.linear
+                }).start();
+                Animated.timing(this.state.animatedY,{
+                    toValue:64,
+                    ease:Easing.linear
+                }).start();
                 this.lastMove = null
+                console.log(evt,gestureState)
             },
         }
 
@@ -190,11 +217,20 @@ class MsgListContainer extends Component {
                             <Text>子View</Text>
                         </View>
                     </View>
-                    <View onLayout={({nativeEvent:e})=>this.layoutMove(e)} style={[styles.moveView,{...this.state.view3}]}
+                    <Animated.View onLayout={({nativeEvent:e})=>this.layoutMove(e)} style={[styles.moveView,{
+                        left:this.state.animatedX.interpolate({
+                            inputRange:[0,1],
+                            outputRange:[0,Constants.screenWidth - 60]
+                        }),
+                        top:this.state.animatedY.interpolate({
+                            inputRange:[0,1],
+                            outputRange:[64,Constants.screenHeigt - 64 - 60]
+                        })
+                    }]}
                           {...this.panResponder0}
                     >
                         <Text>可拖拽</Text>
-                    </View>
+                    </Animated.View>
 
 
                 </View>
@@ -240,6 +276,8 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'center',
         alignItems:'center',
+        top:150,
+        left:90.5,
         width:60,
         height:60,
         borderRadius:30,

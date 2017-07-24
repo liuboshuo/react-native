@@ -36,6 +36,9 @@ import TestTextInputDemo from './testTextInputDemo'
 import photoBrowserListView from './photoBrowserListView'
 import cameraRollDemo from './cameraRollDemo'
 import AnimatedDemo from './animateDemo'
+import Flat01Demo from './flat01Demo'
+import Flat02Demo from './flat02Demo'
+import Flat03Demo from './flat03Demo'
 class HomeContainers extends Component {
     constructor(props) {
         super(props);
@@ -141,6 +144,18 @@ class HomeContainers extends Component {
             {
                 title:"动画的学习",
                 component:AnimatedDemo
+            },
+            {
+                title:"flatList基础",
+                component:Flat01Demo
+            },
+            {
+                title:"flatList实现九宫格",
+                component:Flat02Demo
+            },
+            {
+                title: "flatList horizontal特性",
+                component: Flat03Demo
             }
         ]
     }
