@@ -8,7 +8,8 @@ import {
     StyleSheet,
     UIManager,
     Animated,
-    Easing
+    Easing,
+    PanResponder
 } from 'react-native';
 import NavigationBar from '../../component/navBarCommon'
 import * as Constants from  '../../constants/constant'
@@ -27,11 +28,16 @@ class MsgListContainer extends Component {
                 top:150,
                 left:90.5,
             },
-            animatedX:new Animated.Value(0),
-            animatedY:new Animated.Value(0)
-
+            animatedX:new Animated.Value(100),
+            animatedY:new Animated.Value(64),
         }
-        this.lastMove = null;
+        this.touchStart = null;
+        this.lastMoveNativeEvent = null;
+
+        this.moveTotalLeft = 0;
+        this.moveTotalTop = 0;
+
+
         this.panResponder1 = {
             onStartShouldSetResponder:(nativeEvent, gestureState)=>{
                 return true
@@ -60,7 +66,6 @@ class MsgListContainer extends Component {
 
             }
         }
-
         this.panResponder2 = {
             onStartShouldSetResponder:(nativeEvent, gestureState)=>{
                 // false 不响应 -> view1会响应
@@ -101,67 +106,83 @@ class MsgListContainer extends Component {
             },
             onResponderGrant:(evt, gestureState)=> {
                 console.log(evt.nativeEvent)
+                this.touchStart = {top:evt.nativeEvent.pageY - evt.nativeEvent.locationY,left:evt.nativeEvent.pageX - evt.nativeEvent.locationX}
+                console.log(this.touchStart)
             },
             onResponderMove:(evt, gestureState)=>{
                 console.log(evt.nativeEvent)
-                if (this.state.view3.top<0 || this.state.view3.left <0 || this.state.view3.top + this.moveHeight > this.height || this.state.view3.left + this.moveWidth > this.width){
-                    return
-                }
-                if (this.lastMove){
-                    const subTop = evt.nativeEvent.locationY - this.lastMove.y;
-                    const subLeft = evt.nativeEvent.locationX - this.lastMove.x;
-                    let top = this.state.view3.top + subTop;
-                    let left = this.state.view3.left + subLeft;
-                    if (top<=0) top = 0;
-                    if (left<=0) left =0 ;
-                    if (top+this.moveHeight >= this.height) top = this.height - this.moveHeight
-                    if (left+this.moveWidth >= this.width) left = this.width - this.moveWidth
-                    // this.setState({
-                    //     view3:{
-                    //         top:top,
-                    //         left:left
-                    //     }
-                    // })
+
+
+                if (this.lastMoveNativeEvent){
+                    const horizontalDistance = evt.nativeEvent.pageX - this.lastMoveNativeEvent.pageX;
+                    const verDistance = evt.nativeEvent.pageY -this.lastMoveNativeEvent.pageY;
+
+                    this.moveTotalLeft = this.moveTotalLeft +horizontalDistance;
+                    this.moveTotalTop = this.moveTotalTop + verDistance;
+
+                    console.log(this.touchStart.left,this.touchStart.top,horizontalDistance,verDistance,this.moveTotalLeft,this.moveTotalTop)
 
 
 
+                    const toValueHor = this.touchStart.left + this.moveTotalLeft;
+                    const toValuever = this.touchStart.top + this.moveTotalTop;
+
+                    const timestamp = evt.nativeEvent.timestamp - this.lastMoveNativeEvent.timestamp
+                    console.log(toValueHor,toValuever)
 
                     Animated.timing(this.state.animatedX,{
-                        toValue:left,
-                        ease:Easing.linear
+                        toValue:toValueHor,
+                        duration:100,
                     }).start();
                     Animated.timing(this.state.animatedY,{
-                        toValue:top,
-                        ease:Easing.linear
+                        toValue:toValuever,
+                        duration:timestamp,
                     }).start();
-
-
                 }
-                this.lastMove = {
-                    x:evt.nativeEvent.locationX,
-                    y:evt.nativeEvent.locationY
-                }
+                this.lastMoveNativeEvent = evt.nativeEvent;
             },
             onResponderRelease:(evt, gestureState)=>{
+
+                const horizontalDistance = evt.nativeEvent.pageX - this.lastMoveNativeEvent.pageX;
+                const verDistance = evt.nativeEvent.pageY -this.lastMoveNativeEvent.pageY;
+
+                this.moveTotalLeft = this.moveTotalLeft +horizontalDistance;
+                this.moveTotalTop = this.moveTotalTop + verDistance;
+
+                console.log(this.touchStart.left,this.touchStart.top,horizontalDistance,verDistance,this.moveTotalLeft,this.moveTotalTop)
+
+
+
+                const toValueHor = this.touchStart.left + this.moveTotalLeft;
+                const toValuever = this.touchStart.top + this.moveTotalTop;
+
+                const timestamp = evt.nativeEvent.timestamp - this.lastMoveNativeEvent.timestamp
+                console.log(toValueHor,toValuever)
+
                 Animated.timing(this.state.animatedX,{
-                    toValue:evt.nativeEvent.pageX,
-                    ease:Easing.linear
+                    toValue:toValueHor,
+                    duration:100,
                 }).start();
                 Animated.timing(this.state.animatedY,{
-                    toValue:64,
-                    ease:Easing.linear
+                    toValue:toValuever,
+                    duration:100,
                 }).start();
-                this.lastMove = null
-                console.log(evt,gestureState)
+
+
+                this.moveTotalLeft = 0;
+                this.moveTotalTop = 0
+                this.lastMoveNativeEvent = null;
             },
         }
-
     }
     layout(e){
         console.log(e.layout)
         console.log(e)
         this.width = e.layout.width;
         this.height = e.layout.height;
+
+
+
         UIManager.measure(e.target,(x,y,width,height,left,top)=> {
             console.log("x= " + x);
             console.log("y= " + y);
@@ -218,19 +239,15 @@ class MsgListContainer extends Component {
                         </View>
                     </View>
                     <Animated.View onLayout={({nativeEvent:e})=>this.layoutMove(e)} style={[styles.moveView,{
-                        left:this.state.animatedX.interpolate({
-                            inputRange:[0,1],
-                            outputRange:[0,Constants.screenWidth - 60]
-                        }),
-                        top:this.state.animatedY.interpolate({
-                            inputRange:[0,1],
-                            outputRange:[64,Constants.screenHeigt - 64 - 60]
-                        })
+                        left:this.state.animatedX,
+                        top:this.state.animatedY
                     }]}
                           {...this.panResponder0}
                     >
                         <Text>可拖拽</Text>
                     </Animated.View>
+
+
 
 
                 </View>
@@ -276,8 +293,6 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'center',
         alignItems:'center',
-        top:150,
-        left:90.5,
         width:60,
         height:60,
         borderRadius:30,
